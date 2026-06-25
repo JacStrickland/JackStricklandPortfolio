@@ -11,7 +11,8 @@ A static, multi-page portfolio site based on Jack Strickland's Framer portfolio 
 | `design.html` | Design project index |
 | `engineering.html` | Engineering project index |
 | `animation.html` | Animation gallery and reel |
-| `film.html` | Film embeds |
+| `film.html` | Film embeds and edited work |
+| `projects/the-shape-of-circularity.html` | The Shape of Circularity capstone case study |
 | `projects/posy.html` | Posy case study |
 | `projects/riot-film-festival.html` | RIOT Film Festival case study |
 | `projects/minder.html` | Minder case study |
@@ -22,22 +23,28 @@ A static, multi-page portfolio site based on Jack Strickland's Framer portfolio 
 
 ```text
 JackStricklandPortfolio/
-├── index.html
-├── about.html
-├── design.html
-├── engineering.html
-├── animation.html
-├── film.html
-├── projects/
-│   ├── posy.html
-│   ├── riot-film-festival.html
-│   ├── minder.html
-│   ├── fire-seeking-sprinkler.html
-│   └── safekeeping-lock-box.html
-├── css/
-│   └── style.css
-└── js/
-    └── main.js
+|-- index.html
+|-- about.html
+|-- design.html
+|-- engineering.html
+|-- animation.html
+|-- film.html
+|-- assets/
+|   |-- images/
+|   |   `-- shape-of-circularity-poster.png
+|   `-- video/
+|       `-- shape-of-circularity-capstone.mp4
+|-- projects/
+|   |-- the-shape-of-circularity.html
+|   |-- posy.html
+|   |-- riot-film-festival.html
+|   |-- minder.html
+|   |-- fire-seeking-sprinkler.html
+|   `-- safekeeping-lock-box.html
+|-- css/
+|   `-- style.css
+`-- js/
+    `-- main.js
 ```
 
 ## Run locally
@@ -62,5 +69,6 @@ Then visit `http://localhost:8000`.
 
 - Copy lives directly in the HTML files.
 - Global layout, typography, colors, and case-study styles live in `css/style.css`.
-- Media currently uses Framer-hosted image URLs and YouTube embeds.
+- Most older media uses Framer-hosted image URLs and YouTube embeds.
+- The Shape of Circularity uses local optimized assets in `assets/images/` and `assets/video/`.
 - The private Framer editor URL requires login, so this repository uses the publicly visible Framer pages as source content.

@@ -313,6 +313,107 @@ section { padding: 88px 0; }
 }
 .project:hover .arrow { opacity: 1; }
 
+/* ---------- Capstone showcase ---------- */
+.capstone-feature {
+  padding-top: 36px;
+}
+.capstone-card {
+  display: grid;
+  grid-template-columns: 1.04fr 0.96fr;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  overflow: hidden;
+}
+.capstone-media {
+  min-height: 340px;
+  background: #000;
+}
+.capstone-media img,
+.capstone-media video {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  background: #000;
+}
+.capstone-copy {
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.capstone-copy h2,
+.capstone-copy h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3.4vw, 2.85rem);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin-bottom: 16px;
+}
+.capstone-copy p {
+  color: var(--fg-dim);
+  max-width: 58ch;
+}
+.capstone-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 26px;
+}
+.capstone-meta span {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 5px 9px;
+}
+.capstone-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.capstone-button {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  border-radius: 100px;
+  padding: 11px 16px;
+  transition: background .2s ease, color .2s ease;
+}
+.capstone-button:hover {
+  background: var(--accent);
+  color: #0a0a0a;
+}
+.case-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #000;
+}
+.case-image.poster {
+  max-height: none;
+  object-fit: contain;
+  background: #f7f5ef;
+}
+.case-list {
+  color: var(--fg-dim);
+  margin: -16px 0 34px;
+  padding-left: 20px;
+}
+.case-list li {
+  margin-bottom: 8px;
+}
+
 /* ---------- Case studies ---------- */
 .case-study {
   background: var(--bg);
@@ -703,6 +804,8 @@ section { padding: 88px 0; }
   .case-meta { grid-template-columns: 1fr; }
   .case-grid { grid-template-columns: 1fr; gap: 28px; }
   .case-grid aside { position: relative; top: 0; }
+  .capstone-card { grid-template-columns: 1fr; }
+  .capstone-copy { padding: 28px; }
 
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   section { padding: 64px 0; }
