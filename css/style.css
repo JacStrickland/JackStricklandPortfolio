@@ -4,16 +4,16 @@
    ============================================================ */
 
 :root {
-  --bg:        #0a0a0a;
-  --bg-soft:   #141414;
-  --bg-card:   #181818;
-  --line:      #262626;
-  --line-soft: #1d1d1d;
-  --fg:        #f2f0eb;
-  --fg-dim:    #a3a097;
-  --fg-faint:  #6b6862;
-  --accent:    #c6f24e;       /* acid lime — the one bold note */
-  --accent-dim:#9bbf3a;
+  --bg:        #080a0f;       /* near-black with a faint navy cast */
+  --bg-soft:   #10131c;
+  --bg-card:   #141823;
+  --line:      #232838;
+  --line-soft: #1a1e2a;
+  --fg:        #eef1f7;
+  --fg-dim:    #9aa3b5;
+  --fg-faint:  #626a7d;
+  --accent:    #5b8fd9;       /* steel navy-blue — the one bold note */
+  --accent-dim:#2d4d80;
   --radius:    14px;
   --maxw:      1180px;
   --mono: "Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
