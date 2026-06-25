@@ -1,67 +1,66 @@
-# Jack Strickland — Portfolio
+# Jack Strickland Portfolio
 
-A static, multi-page portfolio site rebuilt from the Velora Framer template. Plain HTML + CSS + a little vanilla JS — no build step, no framework, no dependencies.
+A static, multi-page portfolio site based on Jack Strickland's Framer portfolio content. The site uses plain HTML, CSS, and a small amount of vanilla JavaScript. There is no build step, framework, or dependency install.
 
 ## Pages
 
 | File | Page |
 |------|------|
-| `index.html` | Home / hero + four disciplines |
+| `index.html` | Home / portfolio overview |
 | `about.html` | About Jack |
-| `design.html` | Design projects |
-| `engineering.html` | Engineering projects |
-| `animation.html` | Animation (images, video, embed) |
-| `film.html` | Film (YouTube embeds) |
+| `design.html` | Design project index |
+| `engineering.html` | Engineering project index |
+| `animation.html` | Animation gallery and reel |
+| `film.html` | Film embeds |
+| `projects/posy.html` | Posy case study |
+| `projects/riot-film-festival.html` | RIOT Film Festival case study |
+| `projects/minder.html` | Minder case study |
+| `projects/fire-seeking-sprinkler.html` | Fire-Seeking Sprinkler case study |
+| `projects/safekeeping-lock-box.html` | SafeKeeping Lock Box case study |
 
 ## Structure
 
-```
-velora/
+```text
+JackStricklandPortfolio/
 ├── index.html
 ├── about.html
 ├── design.html
 ├── engineering.html
 ├── animation.html
 ├── film.html
+├── projects/
+│   ├── posy.html
+│   ├── riot-film-festival.html
+│   ├── minder.html
+│   ├── fire-seeking-sprinkler.html
+│   └── safekeeping-lock-box.html
 ├── css/
-│   └── style.css     # one shared stylesheet
+│   └── style.css
 └── js/
-    └── main.js       # mobile nav + scroll reveal
+    └── main.js
 ```
 
 ## Run locally
 
-Just open `index.html` in a browser. Or serve it:
+Open `index.html` in a browser, or serve the folder locally:
 
 ```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
+python -m http.server 8000
 ```
+
+Then visit `http://localhost:8000`.
 
 ## Deploy with GitHub Pages
 
-1. Create a new repository on GitHub and push these files to it:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial portfolio site"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<repo-name>.git
-   git push -u origin main
-   ```
-2. On GitHub: **Settings → Pages → Build and deployment**.
-3. Set **Source** to *Deploy from a branch*, branch `main`, folder `/ (root)`.
-4. Save. Your site goes live at `https://<your-username>.github.io/<repo-name>/` within a minute or two.
-
-## Customizing
-
-- **Text**: edit the relevant `.html` file directly — copy lives in plain markup.
-- **Colors / fonts / spacing**: all tokens are CSS variables at the top of `css/style.css` (`:root`). Change `--accent` to swap the lime highlight; `--bg` and `--fg` for the dark base.
-- **Images / videos**: media currently points at the original Framer-hosted URLs. To self-host, download them into an `images/` folder and update the `src` paths.
-- **Contact / links**: phone, location, and LinkedIn are in the footer of every page and the About CTA.
+1. Push the repository to GitHub.
+2. Open the repository settings.
+3. Go to Pages.
+4. Set the source to deploy from the `main` branch and the root folder.
+5. Save the settings.
 
 ## Notes
 
-- Fonts are loaded from Google Fonts (Fraunces, Inter, Space Mono).
-- The site is responsive down to mobile, has keyboard-visible focus, and respects `prefers-reduced-motion`.
-- Media URLs are hotlinked from `framerusercontent.com` and YouTube — they'll keep working as long as those stay up. Self-host if you want full control.
+- Copy lives directly in the HTML files.
+- Global layout, typography, colors, and case-study styles live in `css/style.css`.
+- Media currently uses Framer-hosted image URLs and YouTube embeds.
+- The private Framer editor URL requires login, so this repository uses the publicly visible Framer pages as source content.

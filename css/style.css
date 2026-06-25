@@ -1,5 +1,5 @@
 /* ============================================================
-   Jack Strickland — Portfolio
+   Jack Strickland - Portfolio
    Shared stylesheet
    ============================================================ */
 
@@ -12,7 +12,7 @@
   --fg:        #eef1f7;
   --fg-dim:    #9aa3b5;
   --fg-faint:  #626a7d;
-  --accent:    #5b8fd9;       /* steel navy-blue — the one bold note */
+  --accent:    #5b8fd9;       /* steel navy-blue */
   --accent-dim:#2d4d80;
   --radius:    14px;
   --maxw:      1180px;
@@ -260,7 +260,7 @@ section { padding: 88px 0; }
   transition: padding-left .25s ease;
 }
 .project:last-child { border-bottom: 1px solid var(--line); }
-.project:hover { padding-left: 10px; }
+.project:hover { padding-left: 10px; border-color: var(--accent-dim); }
 .project .idx {
   font-family: var(--mono);
   font-size: 13px;
@@ -312,6 +312,122 @@ section { padding: 88px 0; }
   margin-top: 8px;
 }
 .project:hover .arrow { opacity: 1; }
+
+/* ---------- Case studies ---------- */
+.case-study {
+  background: var(--bg);
+}
+.case-hero {
+  padding: 96px 0 48px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.back-link {
+  display: inline-flex;
+  margin-bottom: 34px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--fg-dim);
+  transition: color .18s ease;
+}
+.back-link:hover { color: var(--accent); }
+.case-hero h1 {
+  font-family: var(--serif);
+  font-weight: 380;
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  letter-spacing: -0.03em;
+  line-height: 0.96;
+}
+.case-lead {
+  margin-top: 26px;
+  max-width: 760px;
+  color: var(--fg-dim);
+  font-size: clamp(1.08rem, 2vw, 1.35rem);
+  line-height: 1.55;
+}
+.case-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 44px;
+}
+.case-meta div {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.case-meta span {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fg-faint);
+  margin-bottom: 8px;
+}
+.case-meta strong {
+  font-weight: 500;
+  color: var(--fg);
+}
+.case-media-section {
+  padding: 52px 0 0;
+}
+.case-image {
+  width: 100%;
+  max-height: 620px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+.case-content {
+  padding-top: 70px;
+}
+.case-grid {
+  display: grid;
+  grid-template-columns: 0.45fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.case-grid aside {
+  position: sticky;
+  top: 96px;
+}
+.case-grid h2 {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.case-grid h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+.case-grid p {
+  color: var(--fg-dim);
+  margin-bottom: 34px;
+  max-width: 760px;
+}
+.text-link {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+.next-work {
+  padding: 34px 0 84px;
+}
+.next-work a {
+  display: block;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 13px;
+}
 
 /* ---------- About ---------- */
 .about-grid {
@@ -492,6 +608,9 @@ section { padding: 88px 0; }
   .project { grid-template-columns: 36px 1fr; }
   .project .meta { grid-column: 2; text-align: left; margin-top: 14px; padding-top: 0; }
   .project .arrow { display: none; }
+  .case-meta { grid-template-columns: 1fr; }
+  .case-grid { grid-template-columns: 1fr; gap: 28px; }
+  .case-grid aside { position: relative; top: 0; }
 
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   section { padding: 64px 0; }
