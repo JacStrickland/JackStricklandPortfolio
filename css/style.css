@@ -597,15 +597,10 @@ section { padding: 88px 0; }
 .info-photo {
   position: sticky;
   top: 96px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--bg-card);
 }
 .info-photo img {
   width: 100%;
-  aspect-ratio: 4/5;
-  object-fit: cover;
+  object-fit: contain;
   filter: grayscale(0.1) contrast(1.03);
 }
 .info-copy h1 {
