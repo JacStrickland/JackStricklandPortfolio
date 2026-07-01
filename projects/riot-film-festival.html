@@ -1,14 +1,78 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RIOT Film Festival - Jack Strickland</title>
-<meta name="description" content="RIOT Film Festival case study by Jack Strickland: a visual system for an animation and mixed-media festival.">
+<meta name="description" content="RIOT Film Festival case study by Jack Strickland: a 10-week visual identity system for a UW animation and mixed-media festival.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+<style>
+  .riot-section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+    margin-bottom: 16px;
+  }
+  .riot-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .riot-three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+  .riot-img-full {
+    width: 100%;
+    border-radius: var(--radius);
+    display: block;
+  }
+  .riot-img-card {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    display: block;
+  }
+  .riot-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+  .riot-swatch-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .riot-swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .riot-swatch-block {
+    width: 80px;
+    height: 56px;
+    border-radius: 8px;
+  }
+  .riot-swatch-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--fg-dim);
+    letter-spacing: .04em;
+  }
+  @media (max-width: 680px) {
+    .riot-two-col { grid-template-columns: 1fr; }
+    .riot-three-col { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
 
@@ -27,12 +91,14 @@
 </header>
 
 <main class="case-study">
+
+  <!-- Hero -->
   <section class="case-hero">
     <div class="wrap">
       <a class="back-link" href="../design.html">&larr; Back to design</a>
-      <p class="eyebrow">Visual Communication / Mar 7, 2025</p>
+      <p class="eyebrow">Visual Communication / HCDE 308 / Mar 7, 2025</p>
       <h1>RIOT Film Festival</h1>
-      <p class="case-lead">A 10-week visual identity system for a University of Washington animation and mixed-media festival, spanning posters, signage, wayfinding, and a mobile ticketing prototype.</p>
+      <p class="case-lead">A 10-week visual identity system for a University of Washington animation and mixed-media festival — spanning brand strategy, competitor analysis, user research, triadic color system, custom typography, poster design, wayfinding signage, and a high-fidelity mobile ticketing prototype.</p>
       <div class="case-meta">
         <div><span>Client</span><strong>HCDE 308</strong></div>
         <div><span>Role</span><strong>PM, Researcher, UI/UX Designer</strong></div>
@@ -41,26 +107,221 @@
     </div>
   </section>
 
-  <section class="case-media-section">
+  <!-- Cover -->
+  <section class="case-media-section" style="padding-bottom:0;">
     <div class="wrap">
-      <img class="case-image" src="https://framerusercontent.com/images/mAEanqLPhfEyXkWkkdSMMUNQMI.png?height=661&width=1207" alt="RIOT Film Festival identity graphic">
+      <img class="riot-img-full reveal" src="../assets/images/riot-cover.png" alt="RIOT Film Festival — 2025 Case Study cover" loading="eager">
     </div>
   </section>
 
+  <hr class="riot-divider">
+
+  <!-- Introduction -->
   <section class="case-content">
     <div class="wrap case-grid">
       <aside>
-        <h2>Background</h2>
+        <h2>Overview</h2>
       </aside>
       <div>
-        <h3>Core value proposition</h3>
-        <p>RIOT Film Festival was positioned as a platform for emerging artists to experiment, challenge conventional storytelling, and present work in an environment that feels as original as the films themselves.</p>
+        <h3>The project</h3>
+        <p>RIOT Film Festival is a conceptual 3-day animation and mixed-media film festival at the University of Washington, developed over 10 weeks in HCDE 308. The goal was to create a complete visual communication system: a bold identity grounded in research, expressed through print and digital touchpoints, and validated through user testing.</p>
+        <h3>Communication goal</h3>
+        <p>Design a festival identity that communicates inclusion, artistic originality, and experimental energy — one that supports emerging filmmakers while standing apart from the polished conventions of mainstream festival branding.</p>
+        <h3>Deliverables</h3>
+        <p>Competitor analysis, three user personas, customer journey map, user flow, mood board, color system, typography pairing, wordmark iterations, UI style tile, icon set, wireframes with user testing, high-fidelity mobile app, festival poster, directional signage, and a campus wayfinding map.</p>
+      </div>
+    </div>
+  </section>
 
-        <h3>Unique selling point</h3>
-        <p>Rather than follow the polished conventions of traditional festival branding, the identity embraces controlled disorder through bold typography, layered media, sketch-like marks, and a triadic color palette.</p>
+  <hr class="riot-divider">
 
-        <h3>Results</h3>
-        <p>The final system translated across print and digital touchpoints and was presented to professors and peers. The direction reinforced RIOT as a festival built around experimentation, creative freedom, and student-made work with a distinct point of view.</p>
+  <!-- Research -->
+  <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
+    <div class="wrap">
+      <p class="riot-section-label">01 / Research</p>
+      <div class="riot-two-col" style="margin-bottom:40px;">
+        <div>
+          <img class="riot-img-card reveal" src="../assets/images/riot-research.png" alt="RIOT — Initial research" loading="lazy">
+        </div>
+        <div>
+          <img class="riot-img-card reveal" src="../assets/images/riot-competitor.png" alt="RIOT — Competitor analysis" loading="lazy">
+        </div>
+      </div>
+      <div class="wrap case-grid" style="padding:0;">
+        <div></div>
+        <div>
+          <p style="color:var(--fg-dim);font-size:0.95rem;line-height:1.7;">Initial research focused on animation and mixed-media festival communication — studying SIFF, NY Indie Shorts, and Portland Film Festival to identify gaps in how festivals communicate inclusion and experimental support. A 5-column competitor analysis surfaced pricing models, target audiences, and identity strategies to inform RIOT's differentiation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personas + Customer Journey -->
+  <section class="case-media-section" style="padding:64px 0;">
+    <div class="wrap">
+      <p class="riot-section-label">02 / User Research</p>
+      <img class="riot-img-full reveal" src="../assets/images/riot-personas.png" alt="RIOT — User personas: Harrison Hall, Katie McDonald, Eli Durand" loading="lazy" style="margin-bottom:32px;">
+      <img class="riot-img-full reveal" src="../assets/images/riot-journey.png" alt="RIOT — Customer journey map (Katie McDonald)" loading="lazy">
+      <p style="margin-top:20px;font-size:0.95rem;line-height:1.7;color:var(--fg-dim);">Three personas anchored the research: Harrison Hall (audience), Katie McDonald (emerging filmmaker), and Eli Durand (festival-goer and DJ). The customer journey mapped Katie's path from awareness to retention — surfacing two core insights: the USP must be legible on the website, and both artists and audience need to feel their work and presence are valued.</p>
+    </div>
+  </section>
+
+  <hr class="riot-divider">
+
+  <!-- Mood Board + User Flow -->
+  <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
+    <div class="wrap">
+      <p class="riot-section-label">03 / Direction</p>
+      <div class="riot-two-col">
+        <div>
+          <p style="font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.05em;margin-bottom:12px;">MOOD BOARD</p>
+          <img class="riot-img-card reveal" src="../assets/images/riot-moodboard.png" alt="RIOT — Mood board: animation stills reference" loading="lazy">
+          <p style="margin-top:16px;font-size:0.9rem;line-height:1.65;color:var(--fg-dim);">A collage of animation stills — WALL-E, Spider-Man: Miles Morales, Pinocchio, Bojack Horseman — framing the communication goal of rough originality and sketch-like creative energy.</p>
+        </div>
+        <div>
+          <p style="font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.05em;margin-bottom:12px;">USER FLOW — TICKET PURCHASE</p>
+          <img class="riot-img-card reveal" src="../assets/images/riot-userflow.png" alt="RIOT — User flow: ticket purchase (Eli)" loading="lazy">
+          <p style="margin-top:16px;font-size:0.9rem;line-height:1.65;color:var(--fg-dim);">Eli browses options, selects a ticket, and receives confirmation. The flow prioritizes transparent pricing and reassuring confirmations — redirecting users who exit back into festival content rather than dead ends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="riot-divider">
+
+  <!-- Visual Identity -->
+  <section class="case-content" style="padding-bottom:0;">
+    <div class="wrap case-grid">
+      <aside>
+        <h2>Visual identity</h2>
+      </aside>
+      <div>
+        <h3>Color system</h3>
+        <p>A triadic palette — purple, blue-green, and yellow-orange — chosen to convey balance, beauty, and contrast. Primary hues (#3A1C6B and #30AFA0) meet WCAG contrast thresholds at 7.26:1 and 7.05:1.</p>
+        <div class="riot-swatch-row">
+          <div class="riot-swatch">
+            <div class="riot-swatch-block" style="background:#3A1C6B;"></div>
+            <span class="riot-swatch-label">Purple<br>#3A1C6B</span>
+          </div>
+          <div class="riot-swatch">
+            <div class="riot-swatch-block" style="background:#30AFA0;"></div>
+            <span class="riot-swatch-label">Blue Green<br>#30AFA0</span>
+          </div>
+          <div class="riot-swatch">
+            <div class="riot-swatch-block" style="background:#ECDCF9;"></div>
+            <span class="riot-swatch-label">Light Purple<br>#ECDCF9</span>
+          </div>
+          <div class="riot-swatch">
+            <div class="riot-swatch-block" style="background:#C2F5EF;"></div>
+            <span class="riot-swatch-label">Teal<br>#C2F5EF</span>
+          </div>
+          <div class="riot-swatch">
+            <div class="riot-swatch-block" style="background:#B88C36;"></div>
+            <span class="riot-swatch-label">Dark Yellow Orange<br>#B88C36</span>
+          </div>
+          <div class="riot-swatch">
+            <div class="riot-swatch-block" style="background:#FCBF48;"></div>
+            <span class="riot-swatch-label">Yellow Orange<br>#FCBF48</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-media-section" style="padding:40px 0 64px;">
+    <div class="wrap">
+      <div class="riot-two-col">
+        <div>
+          <p class="riot-section-label">04 / Typography</p>
+          <img class="riot-img-full reveal" src="../assets/images/riot-typography.png" alt="RIOT — Typography: Palette Mosaic + Geist Mono" loading="lazy">
+          <p style="margin-top:16px;font-size:0.9rem;line-height:1.65;color:var(--fg-dim);">Palette Mosaic (wordmark) paired with Geist Mono (body). Palette Mosaic uses no counters or apertures — instead putting rough lines of separation between fills — communicating disruption. Geist Mono delivers a typewriter-readable complement that feels organized without being formal.</p>
+        </div>
+        <div>
+          <p class="riot-section-label">05 / Wordmark</p>
+          <img class="riot-img-full reveal" src="../assets/images/riot-wordmark.png" alt="RIOT — Wordmark iterations" loading="lazy">
+          <p style="margin-top:16px;font-size:0.9rem;line-height:1.65;color:var(--fg-dim);">Four wordmark explorations — solid black, triple-line outline, teal fill, and hand-drawn sketch — converging on the bold all-caps Palette Mosaic mark. All caps emphasizes energy and passion; the rough letterforms embody the theme of pushing artistic boundaries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Style Tile -->
+  <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
+    <div class="wrap">
+      <p class="riot-section-label">06 / UI Style tile &amp; icons</p>
+      <img class="riot-img-full reveal" src="../assets/images/riot-styletile.png" alt="RIOT — UI style tile: buttons, input states, icon set" loading="lazy">
+      <p style="margin-top:20px;font-size:0.95rem;line-height:1.7;color:var(--fg-dim);max-width:640px;">Primary buttons guide key actions using the blue-green accent; secondary buttons support navigation without competing. The icon set — home, ticket, info, settings, and merch — uses the primary purple and bold chunky forms that echo the wordmark's energy.</p>
+    </div>
+  </section>
+
+  <hr class="riot-divider">
+
+  <!-- Wireframes -->
+  <section class="case-media-section" style="padding:64px 0;">
+    <div class="wrap">
+      <p class="riot-section-label">07 / Wireframes &amp; user testing</p>
+      <img class="riot-img-full reveal" src="../assets/images/riot-wireframes.png" alt="RIOT — Wireframes: tickets, schedule, cart, card details, confirmation" loading="lazy">
+      <p style="margin-top:20px;font-size:0.95rem;line-height:1.7;color:var(--fg-dim);max-width:680px;">Five wireframe screens — ticket selection, day schedule, cart, card details, and purchase confirmation — prioritize ease of navigation and visual hierarchy throughout the checkout flow. Key change from user testing: settings icon replaced with a profile icon that saves financial and contact information, improving the UX for repeat attendees.</p>
+    </div>
+  </section>
+
+  <!-- Mobile Interface -->
+  <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
+    <div class="wrap">
+      <p class="riot-section-label">08 / High-fidelity mobile interface</p>
+      <img class="riot-img-full reveal" src="../assets/images/riot-mobile.png" alt="RIOT — Final mobile interface: home, schedule, card details" loading="lazy">
+      <p style="margin-top:20px;font-size:0.95rem;line-height:1.7;color:var(--fg-dim);max-width:680px;">The final mobile app uses bold Palette Mosaic typography, thematic purple and teal palette, and a bottom icon bar for navigation between home, tickets, info, profile, and merch. The ticket purchase flow surfaces keynote speakers (Hayao Miyazaki, Hiro Murai, Richard Linklater), day-pass pricing, and a streamlined card entry screen with a profile-save option.</p>
+    </div>
+  </section>
+
+  <hr class="riot-divider">
+
+  <!-- Poster -->
+  <section class="case-media-section" style="padding:64px 0;">
+    <div class="wrap">
+      <p class="riot-section-label">09 / Festival poster</p>
+      <div class="riot-two-col">
+        <div>
+          <img class="riot-img-card reveal" src="../assets/images/riot-poster.png" alt="RIOT — Final festival poster and iterations" loading="lazy">
+        </div>
+        <div style="padding-top:8px;">
+          <h3 style="margin-top:0;">Final poster + iterations</h3>
+          <p style="font-size:0.95rem;line-height:1.75;color:var(--fg-dim);">The final poster uses Palette Mosaic for the festival title and headline events — communicating energy and thematic clarity. Geist Mono handles all supporting information. All-caps titles establish hierarchy; bolded event names, underlined times, and all-caps guest names create three levels of visual priority.</p>
+          <p style="font-size:0.95rem;line-height:1.75;color:var(--fg-dim);">The event runs April 18–20 at Meany Hall, Kane Hall, and Henry Art Gallery. Featured keynote speakers: Hayao Miyazaki (Fri), Hiro Murai (Sat), Richard Linklater (Sun). Daily Q&A sessions at 1pm, 2:30pm, and 6pm.</p>
+          <p style="font-size:0.95rem;line-height:1.75;color:var(--fg-dim);">Four poster iterations explored layout, color density, and compositional balance before arriving at the final teal-and-purple split composition with the oversized film-reel R lettermark.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signage + Map -->
+  <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
+    <div class="wrap">
+      <p class="riot-section-label">10 / Signage &amp; wayfinding map</p>
+      <div class="riot-two-col">
+        <div>
+          <img class="riot-img-card reveal" src="../assets/images/riot-signage.png" alt="RIOT — Festival directional signage" loading="lazy">
+          <p style="margin-top:16px;font-size:0.9rem;line-height:1.65;color:var(--fg-dim);">A 6-ft directional sign placed at a UW campus entrance — directing attendees to Kane Hall, Meany Hall, Henry Art Gallery, restrooms, and the information desk. The logomark and triadic palette anchor the sign as unmistakably RIOT.</p>
+        </div>
+        <div>
+          <img class="riot-img-card reveal" src="../assets/images/riot-map.png" alt="RIOT — Campus wayfinding map" loading="lazy">
+          <p style="margin-top:16px;font-size:0.9rem;line-height:1.65;color:var(--fg-dim);">A campus wayfinding map using the color system to differentiate the three event buildings (Kane Hall, Meany Hall, Henry Art Gallery) from surrounding campus. Numbered markers, restroom icons, information desk markers, and underground parking callouts provide accessible, at-a-glance orientation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflection -->
+  <section class="case-content">
+    <div class="wrap case-grid">
+      <aside>
+        <h2>Reflection</h2>
+      </aside>
+      <div>
+        <h3>What I built</h3>
+        <p>RIOT is a complete visual system developed from research to final deliverable in 10 weeks. Every touchpoint — the poster, the app, the signage, the map — speaks the same visual language: bold, sketch-inspired, triadic, and rooted in the idea that raw creativity deserves its own stage.</p>
+        <h3>What I learned</h3>
+        <p>Designing for a fictional festival pushed me to make every design decision earn its place — there was no existing brand to defer to. User testing on the wireframes revealed how much a single icon swap (settings to profile) changes the emotional trust a user places in a checkout flow. The identity work taught me how to build a design language from scratch and apply it consistently across scales from mobile UI to a 6-foot printed sign.</p>
       </div>
     </div>
   </section>
@@ -70,7 +331,37 @@
       <a href="minder.html">Next project: Minder &rarr;</a>
     </div>
   </section>
+
 </main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand-lg">Jack Strickland</div>
+        <p class="tagline">Designer, engineer, animator, and filmmaker based in Seattle.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="../about.html">About</a>
+        <a href="../design.html">Dsgn</a>
+        <a href="../engineering.html">Engr</a>
+        <a href="../animation.html">Anim</a>
+        <a href="../film.html">Film</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:13605350232">360-535-0232</a>
+        <span>Seattle, WA, USA</span>
+        <a href="https://www.linkedin.com/in/jack-r-strickland-uwhcde" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>&copy; 2026 Jack Strickland</span>
+      <span>Static portfolio site</span>
+    </div>
+  </div>
+</footer>
 
 <script src="../js/main.js"></script>
 </body>
