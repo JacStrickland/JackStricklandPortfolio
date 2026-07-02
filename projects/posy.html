@@ -10,58 +10,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <style>
-  .ps-label {
+  .p-lbl {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: .1em;
     text-transform: uppercase;
     color: var(--fg-faint);
     margin-bottom: 20px;
-  }
-  .ps-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    align-items: start;
-  }
-  .ps-three-col {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    align-items: start;
-  }
-  .ps-img {
-    width: 100%;
-    border-radius: var(--radius);
-    box-shadow: 0 6px 28px rgba(0,0,0,0.12);
     display: block;
   }
-  .ps-img-flat {
-    width: 100%;
-    border-radius: var(--radius);
+  .p-sublbl {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+    margin-bottom: 12px;
     display: block;
   }
-  .ps-swatch-row {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    margin-bottom: 24px;
-  }
-  .ps-swatch { display: flex; flex-direction: column; gap: 6px; }
-  .ps-swatch-block { width: 72px; height: 48px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.06); }
-  .ps-swatch-label { font-family: var(--mono); font-size: 10px; color: var(--fg-dim); letter-spacing: .03em; }
-  .ps-screen {
-    width: 100%;
-    border-radius: 28px;
-    box-shadow: 0 20px 56px rgba(0,0,0,0.22);
-    display: block;
-  }
-  .ps-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
-  @media (max-width: 640px) {
-    .ps-two-col { grid-template-columns: 1fr; }
-    .ps-three-col { grid-template-columns: 1fr; }
-  }
+  .p-two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
+  .p-three { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; align-items: start; }
+  .p-img { width: 100%; border-radius: var(--radius); box-shadow: 0 6px 28px rgba(0,0,0,0.11); display: block; }
+  .p-flat { width: 100%; border-radius: var(--radius); display: block; }
+  .p-phone { width: 100%; border-radius: 24px; box-shadow: 0 20px 52px rgba(0,0,0,0.22); display: block; }
+  .p-screen-cap { text-align:center; margin-top:12px; font-family:var(--mono); font-size:11px; color:var(--fg-faint); letter-spacing:.04em; }
+  .p-swatch-row { display:flex; gap:14px; flex-wrap:wrap; margin:20px 0 24px; }
+  .p-swatch { display:flex; flex-direction:column; gap:6px; }
+  .p-swatch-block { width:68px; height:44px; border-radius:8px; border:1px solid rgba(0,0,0,0.07); }
+  .p-swatch-lbl { font-family:var(--mono); font-size:10px; color:var(--fg-dim); }
+  .p-rule { border:none; border-top:1px solid var(--border); margin:0; }
+  .p-note { font-size:0.9rem; line-height:1.7; color:var(--fg-dim); margin-top:14px; }
+  @media(max-width:640px){ .p-two,.p-three{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -82,7 +61,6 @@
 
 <main class="case-study">
 
-  <!-- Hero -->
   <section class="case-hero">
     <div class="wrap">
       <a class="back-link" href="../design.html">&larr; Back to design</a>
@@ -97,169 +75,173 @@
     </div>
   </section>
 
-  <!-- Brand graphic -->
   <section class="case-media-section" style="padding-bottom:0;">
     <div class="wrap">
       <img class="case-image reveal" src="https://framerusercontent.com/images/9n77YvgesVUcpcd86UxiTep0jNg.png?height=933&width=1282" alt="Posy brand graphic">
     </div>
   </section>
 
-  <hr class="ps-divider">
+  <hr class="p-rule">
 
-  <!-- 01 Value proposition -->
+  <!-- Overview -->
+  <section class="case-content">
+    <div class="wrap case-grid">
+      <aside><h2>Overview</h2></aside>
+      <div>
+        <h3>The challenge</h3>
+        <p>Dating apps optimize for volume. Posy optimizes for intention. The design challenge was to build a product that slows the experience down — making compatibility legible, matching feel trustworthy, and the path from profile to real date feel human rather than gamified.</p>
+        <h3>Approach</h3>
+        <p>Every element — the aurora palette, the Didone serif, the daily match limit, the friend-introduction feature — reinforces the same positioning: dating at the pace of a real bloom. Nothing in the interface rushes the user toward a swipe.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="p-rule">
+
+  <!-- 01 Value prop -->
   <section class="case-media-section" style="padding:64px 0;">
     <div class="wrap">
-      <p class="ps-label">01 / Value proposition</p>
-      <div class="ps-two-col">
-        <div>
-          <img class="ps-img reveal" src="../assets/images/posy-brief-valueprop.png" alt="Posy — Core value proposition card" loading="lazy">
-        </div>
-        <div style="padding-top:8px;">
+      <span class="p-lbl">01 / Value proposition</span>
+      <div class="p-two">
+        <img class="p-img reveal" src="../assets/images/posy-brief-valueprop.png" alt="Posy — Core value proposition">
+        <div style="padding-top:4px;">
           <h3 style="margin-top:0;">"Dating, slowed down to the pace of a real bloom."</h3>
-          <p style="font-size:0.95rem;line-height:1.75;color:var(--fg-dim);">Posy is positioned against the swipe-grind. Instead of infinite faces, you meet a small, considered set each day. Instead of algorithmic opacity, your own friends can plant matches for you.</p>
-          <p style="font-size:0.95rem;line-height:1.75;color:var(--fg-dim);">Every interaction is designed to feel warm, calm, and human — not transactional. The brand tags define the positioning: <em>Intentional. Warm. Non-thirsty. Friend-powered.</em></p>
-          <p style="font-size:0.95rem;line-height:1.75;color:var(--fg-dim);">This CVP shaped every design decision: the aurora calm palette, the serif headlines, the Cupid friend-introduction feature, and the deliberate limit on daily matches.</p>
+          <p class="p-note">Posy is an intentional dating app for people tired of the swipe-grind. Instead of infinite faces, you meet a small, considered set each day — and your own friends can plant matches for you.</p>
+          <p class="p-note">Every interaction is designed to feel warm, calm, and human, not transactional. The positioning tags say it directly: <em>Intentional. Warm. Non-thirsty. Friend-powered.</em></p>
+          <p class="p-note">This core value proposition drove every downstream decision — palette, typography, feature set, and copy tone.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="ps-divider">
-
-  <!-- 02 Design principles -->
+  <!-- 02 Principles + Feature -->
   <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
     <div class="wrap">
-      <p class="ps-label">02 / Design principles</p>
-      <div class="ps-two-col">
+      <span class="p-lbl">02 / Design principles &amp; flagship feature</span>
+      <div class="p-two">
         <div>
-          <p style="font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.05em;margin-bottom:12px;">PRINCIPLES</p>
-          <img class="ps-img reveal" src="../assets/images/posy-brief-principles.png" alt="Posy — Design principles" loading="lazy">
-          <p style="margin-top:16px;font-size:0.9rem;line-height:1.65;color:var(--fg-dim);">Four principles anchor the design system: let the aurora carry emotional weight; pair expressive serif headlines with quiet sans body copy; subtract rather than add; and keep language botanical and gentle — never pushy.</p>
+          <span class="p-sublbl">Design principles</span>
+          <img class="p-img reveal" src="../assets/images/posy-brief-principles.png" alt="Posy — Design principles">
+          <p class="p-note">Four principles anchor the system: let the aurora carry emotional weight; pair expressive serif headlines with quiet sans body; subtract rather than layer; keep language botanical and gentle — never pushy.</p>
         </div>
         <div>
-          <p style="font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.05em;margin-bottom:12px;">CUPID — FLAGSHIP FEATURE</p>
-          <img class="ps-img reveal" src="../assets/images/posy-brief-feature.png" alt="Posy — Plant a match / Cupid feature" loading="lazy">
-          <p style="margin-top:16px;font-size:0.9rem;line-height:1.65;color:var(--fg-dim);">Cupid lets friends introduce two people they think should meet — two names, two numbers. Say why they'd bloom together, and Posy sends a warm private invitation. No swiping, no exposure, just a trusted nudge.</p>
+          <span class="p-sublbl">Cupid — plant a match</span>
+          <img class="p-img reveal" src="../assets/images/posy-brief-feature.png" alt="Posy — Cupid feature: Plant a match">
+          <p class="p-note">Cupid is Posy's signature twist: friends introduce two people they think should meet. Two names, two numbers — say why they'd bloom, and Posy sends a warm private invitation. No swiping, no exposure, just a trusted nudge.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="ps-divider">
+  <hr class="p-rule">
 
   <!-- 03 Visual identity -->
-  <section class="case-content" style="padding-bottom:0;">
+  <section class="case-content" style="padding-bottom:32px;">
     <div class="wrap case-grid">
-      <aside>
-        <h2>Visual identity</h2>
-      </aside>
+      <aside><h2>Visual identity</h2></aside>
       <div>
-        <h3>Color palette</h3>
-        <p>A pale lilac canvas, deep aubergine ink, and a single confident violet — lifted by the iridescent aurora field that spans every screen. The palette communicates calm and warmth rather than excitement and urgency.</p>
-        <div class="ps-swatch-row">
-          <div class="ps-swatch">
-            <div class="ps-swatch-block" style="background:#F5F0FA;"></div>
-            <span class="ps-swatch-label">Blush<br>#F5F0FA</span>
+        <h3>Color</h3>
+        <p>A pale lilac canvas, deep aubergine ink, and a single confident violet — lifted by the iridescent aurora field that spans every screen. The palette communicates calm and warmth, not urgency.</p>
+        <div class="p-swatch-row">
+          <div class="p-swatch">
+            <div class="p-swatch-block" style="background:#F5F0FA;"></div>
+            <span class="p-swatch-lbl">Blush</span>
           </div>
-          <div class="ps-swatch">
-            <div class="ps-swatch-block" style="background:#2A1040;"></div>
-            <span class="ps-swatch-label">Aubergine<br>#2A1040</span>
+          <div class="p-swatch">
+            <div class="p-swatch-block" style="background:#1E0A34;"></div>
+            <span class="p-swatch-lbl">Aubergine</span>
           </div>
-          <div class="ps-swatch">
-            <div class="ps-swatch-block" style="background:#6B21A8;"></div>
-            <span class="ps-swatch-label">Wine<br>#6B21A8</span>
+          <div class="p-swatch">
+            <div class="p-swatch-block" style="background:#7C2FA0;"></div>
+            <span class="p-swatch-lbl">Wine</span>
           </div>
-          <div class="ps-swatch">
-            <div class="ps-swatch-block" style="background:#C4B5FD;"></div>
-            <span class="ps-swatch-label">Lilac<br>#C4B5FD</span>
+          <div class="p-swatch">
+            <div class="p-swatch-block" style="background:#C4B5FD;"></div>
+            <span class="p-swatch-lbl">Lilac</span>
           </div>
-          <div class="ps-swatch">
-            <div class="ps-swatch-block" style="background:#E9E4EF;"></div>
-            <span class="ps-swatch-label">Muted<br>#E9E4EF</span>
+          <div class="p-swatch">
+            <div class="p-swatch-block" style="background:#E6E0ED;"></div>
+            <span class="p-swatch-lbl">Muted</span>
           </div>
         </div>
-        <img class="ps-img-flat reveal" src="../assets/images/posy-brief-colors.png" alt="Posy — Color system" loading="lazy">
+        <img class="p-flat reveal" src="../assets/images/posy-brief-colors.png" alt="Posy — Color system">
       </div>
     </div>
   </section>
 
-  <section class="case-media-section" style="padding:40px 0 64px;">
+  <section class="case-media-section" style="padding:0 0 64px;">
     <div class="wrap">
-      <p class="ps-label">04 / Typography</p>
-      <img class="ps-img-flat reveal" src="../assets/images/posy-brief-type.png" alt="Posy — Typography: DM Serif Display + Epilogue" loading="lazy">
-      <p style="margin-top:20px;font-size:0.95rem;line-height:1.7;color:var(--fg-dim);max-width:640px;">DM Serif Display pairs with Epilogue. The high-contrast Didone serif gives Posy its romantic, editorial voice; the low-contrast geometric sans keeps the interface calm and legible. Neither typeface has italics — every emphasis is created through weight and scale alone.</p>
+      <span class="p-lbl">04 / Typography</span>
+      <img class="p-flat reveal" src="../assets/images/posy-brief-type.png" alt="Posy — Typography: DM Serif Display and Epilogue">
+      <p class="p-note" style="max-width:640px;margin-top:16px;">DM Serif Display (display) pairs with Epilogue (body). The high-contrast Didone gives Posy a romantic, editorial voice; the low-contrast geometric sans keeps the interface calm and legible. Pairing logic: high emotion up top, quiet function underneath.</p>
     </div>
   </section>
+
+  <hr class="p-rule">
 
   <!-- 05 Key flow -->
   <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
     <div class="wrap">
-      <p class="ps-label">05 / Key flow — introduce two people</p>
-      <div class="ps-three-col">
+      <span class="p-lbl">05 / Key flow — introduce two people</span>
+      <div class="p-three">
         <div>
-          <img src="../assets/images/posy-ui-screens.png" alt="Posy — Two people should meet screen" loading="lazy" class="ps-screen"
-               style="object-fit:cover;object-position:7% center;height:480px;">
-          <p style="text-align:center;margin-top:14px;font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.04em;">01 / Introduce</p>
+          <img class="p-phone reveal" src="../assets/images/posy-screen-introduce.png" alt="Posy — Introduce them screen">
+          <p class="p-screen-cap">01 / Introduce</p>
         </div>
         <div>
-          <img src="../assets/images/posy-ui-screens.png" alt="Posy — Who are they? screen" loading="lazy" class="ps-screen"
-               style="object-fit:cover;object-position:50% center;height:480px;">
-          <p style="text-align:center;margin-top:14px;font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.04em;">02 / Who are they?</p>
+          <img class="p-phone reveal" src="../assets/images/posy-screen-whoaresthey.png" alt="Posy — Who are they screen">
+          <p class="p-screen-cap">02 / Who are they?</p>
         </div>
         <div>
-          <img src="../assets/images/posy-ui-screens.png" alt="Posy — Sent screen" loading="lazy" class="ps-screen"
-               style="object-fit:cover;object-position:93% center;height:480px;">
-          <p style="text-align:center;margin-top:14px;font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.04em;">03 / Sent</p>
+          <img class="p-phone reveal" src="../assets/images/posy-screen-sent.png" alt="Posy — Sent screen">
+          <p class="p-screen-cap">03 / Sent</p>
         </div>
       </div>
-      <p style="margin-top:24px;font-size:0.95rem;line-height:1.7;color:var(--fg-dim);">The Cupid flow: tap Introduce → enter two names and phone numbers → explain why they'd bloom → Posy sends a warm invitation. The whole thing takes under 30 seconds and never asks either person to sign up first.</p>
+      <p class="p-note" style="max-width:680px;margin-top:24px;">The Cupid flow in three steps: tap Introduce → enter two names and numbers with a note on why they'd bloom → Posy sends the invitation. The whole action takes under 30 seconds. Neither person needs the app installed to receive it.</p>
     </div>
   </section>
 
   <!-- 06 Icon system -->
   <section class="case-media-section" style="padding:64px 0;">
     <div class="wrap">
-      <p class="ps-label">06 / Icon system — flower species set</p>
-      <div class="reveal" style="display:flex;gap:40px;align-items:center;justify-content:center;">
+      <span class="p-lbl">06 / Icon system — flower species</span>
+      <div style="display:flex;gap:40px;justify-content:center;align-items:flex-start;" class="reveal">
         <div style="text-align:center;">
-          <img src="../assets/images/posy-flower-rose.png" alt="Posy — Rose icon" loading="lazy" style="width:140px;height:140px;object-fit:contain;">
-          <p style="margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.04em;">Rose</p>
+          <img src="../assets/images/posy-flower-rose.png" alt="Posy — Rose" loading="lazy" style="width:130px;height:130px;object-fit:contain;">
+          <p class="p-screen-cap" style="margin-top:10px;">Rose</p>
         </div>
         <div style="text-align:center;">
-          <img src="../assets/images/posy-flower-sunflower.png" alt="Posy — Sunflower icon" loading="lazy" style="width:140px;height:140px;object-fit:contain;">
-          <p style="margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.04em;">Sunflower</p>
+          <img src="../assets/images/posy-flower-sunflower.png" alt="Posy — Sunflower" loading="lazy" style="width:130px;height:130px;object-fit:contain;">
+          <p class="p-screen-cap" style="margin-top:10px;">Sunflower</p>
         </div>
         <div style="text-align:center;">
-          <img src="../assets/images/posy-flower-tulip.png" alt="Posy — Tulip icon" loading="lazy" style="width:140px;height:140px;object-fit:contain;">
-          <p style="margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.04em;">Tulip</p>
+          <img src="../assets/images/posy-flower-tulip.png" alt="Posy — Tulip" loading="lazy" style="width:130px;height:130px;object-fit:contain;">
+          <p class="p-screen-cap" style="margin-top:10px;">Tulip</p>
         </div>
       </div>
-      <p style="margin-top:20px;font-size:0.95rem;line-height:1.7;color:var(--fg-dim);text-align:center;">Each flower species maps to a personality type — the icon set runs through match cards, profiles, and onboarding.</p>
+      <p class="p-note" style="text-align:center;max-width:480px;margin:16px auto 0;">Each species maps to a personality type and appears across match cards, profiles, and onboarding.</p>
     </div>
   </section>
 
   <!-- 07 Screen system -->
   <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
     <div class="wrap">
-      <p class="ps-label">07 / Screen system</p>
-      <img class="ps-img-flat reveal" src="../assets/images/posy-brief-screens.png" alt="Posy — A consistent UI system, screen to screen" loading="lazy">
-      <p style="margin-top:20px;font-size:0.95rem;line-height:1.7;color:var(--fg-dim);">Every screen shares the same anatomy: aurora or calm field, serif headline, frosted glass, posy-orb motifs, and the thin-line nav. The six screens — Welcome, Discover, Messages, Matchmaking, Date Ideas, Empty State — cover the full user journey from first open to a planned date.</p>
+      <span class="p-lbl">07 / Screen system</span>
+      <img class="p-flat reveal" src="../assets/images/posy-brief-screens.png" alt="Posy — A consistent UI system, screen to screen">
+      <p class="p-note" style="max-width:680px;margin-top:16px;">Every screen shares the same anatomy: aurora or calm field, serif headline, frosted glass, posy-orb motifs, thin-line nav. Six screens cover the full journey — Welcome, Discover, Messages, Matchmaking, Date Ideas, Empty State.</p>
     </div>
   </section>
 
-  <hr class="ps-divider">
+  <hr class="p-rule">
 
-  <!-- Work details -->
   <section class="case-content">
     <div class="wrap case-grid">
-      <aside>
-        <h2>Work details</h2>
-      </aside>
+      <aside><h2>Work details</h2></aside>
       <div>
         <h3>Understanding the challenge</h3>
-        <p>Posy needed to feel distinct in a dating-app landscape dominated by fast, low-context swiping. The design challenge was to create an experience that made compatibility legible, reduced friction during onboarding, and helped users convert a match into a real-world plan.</p>
+        <p>Posy needed to feel distinct in a landscape dominated by fast, low-context swiping. The design challenge was to make compatibility legible, reduce friction during onboarding, and help users convert a match into a real-world plan.</p>
         <h3>Designing a seamless experience</h3>
-        <p>The interface was structured around a clearer quiz flow, more intentional match insights, and curated date-spot recommendations. This made the product feel less transactional and gave users stronger reasons to understand, message, and meet compatible matches.</p>
+        <p>The interface was structured around a clearer quiz flow, more intentional match insights, and curated date-spot recommendations — making the product feel less transactional and giving users stronger reasons to understand, message, and meet compatible matches.</p>
         <h3>Design solution</h3>
         <p>The final direction uses a mobile-first layout, direct navigation, and warm visual language to support meaningful discovery. The product communicates compatibility, simplifies decision-making, and creates a more guided path from profile setup to planning a date.</p>
       </div>

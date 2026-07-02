@@ -10,38 +10,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <style>
-  .cs-label {
+  .m-lbl {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: .1em;
     text-transform: uppercase;
     color: var(--fg-faint);
     margin-bottom: 20px;
-  }
-  .cs-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    align-items: start;
-  }
-  .cs-screen {
-    width: 100%;
-    border-radius: 28px;
-    box-shadow: 0 20px 56px rgba(0,0,0,0.38);
     display: block;
   }
-  .cs-screen-label {
-    text-align: center;
-    margin-top: 14px;
+  .m-sublbl {
     font-family: var(--mono);
     font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
     color: var(--fg-faint);
-    letter-spacing: .04em;
+    margin-bottom: 20px;
+    display: block;
   }
-  .cs-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
-  @media (max-width: 640px) {
-    .cs-two-col { grid-template-columns: 1fr; }
-  }
+  .m-two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
+  .m-phone { width: 100%; border-radius: 26px; box-shadow: 0 20px 52px rgba(0,0,0,0.36); display: block; }
+  .m-screen-cap { text-align:center; margin-top:12px; font-family:var(--mono); font-size:11px; color:var(--fg-faint); letter-spacing:.04em; }
+  .m-note { font-size:0.9rem; line-height:1.72; color:var(--fg-dim); }
+  .m-rule { border:none; border-top:1px solid var(--border); margin:0; }
+  @media(max-width:640px){ .m-two{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -62,13 +54,12 @@
 
 <main class="case-study">
 
-  <!-- Hero -->
   <section class="case-hero">
     <div class="wrap">
       <a class="back-link" href="../design.html">&larr; Back to design</a>
       <p class="eyebrow">User Research / Mar 7, 2025</p>
       <h1>Minder</h1>
-      <p class="case-lead">A study-group matching concept designed to help University of Washington students find compatible study partners, organize sessions, and keep collaborative work structured — built around research into scheduling, accountability, and privacy-aware coordination.</p>
+      <p class="case-lead">A study-group matching concept designed to help University of Washington students find compatible study partners, organize sessions, and keep collaborative work structured — built from research into scheduling friction, accountability gaps, and privacy-aware coordination.</p>
       <div class="case-meta">
         <div><span>Client</span><strong>HCDE 303</strong></div>
         <div><span>Role</span><strong>User Researcher, UI/UX Designer</strong></div>
@@ -77,115 +68,106 @@
     </div>
   </section>
 
-  <!-- Brand graphic -->
   <section class="case-media-section" style="padding-bottom:0;">
     <div class="wrap">
       <img class="case-image" src="https://framerusercontent.com/images/aLbSYWJ452MTqLASLJurusXs.png?height=340&width=722" alt="Minder identity graphic">
     </div>
   </section>
 
-  <hr class="cs-divider">
+  <hr class="m-rule">
 
   <!-- Overview -->
   <section class="case-content">
     <div class="wrap case-grid">
-      <aside>
-        <h2>Overview</h2>
-      </aside>
+      <aside><h2>Overview</h2></aside>
       <div>
         <h3>The problem</h3>
-        <p>UW students struggle to form and sustain productive study groups. Generic tools like Discord or GroupMe offer no structure for academic collaboration — no way to match by course, schedule, or study style, and no accountability for follow-through.</p>
+        <p>UW students struggle to form and sustain productive study groups. Generic tools offer no structure for academic collaboration — no way to match by course, schedule, or study style, and no mechanism for accountability between sessions.</p>
         <h3>Design goal</h3>
-        <p>Create a purpose-built matching and coordination app that removes the friction of organizing group study: surfacing compatible partners, simplifying scheduling, and giving groups a shared space that keeps sessions structured without feeling transactional.</p>
+        <p>Create a purpose-built matching and coordination app that removes the friction of organizing group study — surfacing compatible partners, simplifying scheduling, and giving groups a shared space that keeps sessions structured without feeling transactional.</p>
         <h3>Deliverables</h3>
-        <p>User research synthesis, concept definition, UI/UX design across five core screens spanning authentication, onboarding, group discovery, profile, and scheduling.</p>
+        <p>User research synthesis, concept definition, and UI/UX design across five core screens covering the complete student journey from account creation through scheduling.</p>
       </div>
     </div>
   </section>
 
-  <hr class="cs-divider">
+  <hr class="m-rule">
 
-  <!-- Design challenge -->
+  <!-- 01 Design challenge -->
   <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
     <div class="wrap">
-      <p class="cs-label">01 / Design challenge</p>
-      <div class="cs-two-col">
+      <span class="m-lbl">01 / Design challenge</span>
+      <div class="m-two">
         <div>
           <h3 style="margin-top:0;">Matching that means something</h3>
-          <p style="font-size:0.95rem;line-height:1.75;color:var(--fg-dim);">Most matching tools optimize for proximity or mutual interest. Minder goes further — pairing students by shared courses, overlapping availability, and compatible study habits. The design needed to communicate this depth without making onboarding feel like a survey.</p>
-          <p style="font-size:0.95rem;line-height:1.75;color:var(--fg-dim);">The profile setup screen captures course enrollment, schedule availability, and personal study preferences in a single flow — creating the data layer that powers useful matches without exhausting the user upfront.</p>
+          <p class="m-note">Most collaboration tools optimize for convenience. Minder goes further — pairing students by shared courses, overlapping availability, and compatible study habits. The profile setup screen captures this depth in a single onboarding flow without exhausting the user upfront.</p>
+          <p class="m-note" style="margin-top:12px;">The match algorithm surfaces groups by course overlap first, then compatibility score — so the most relevant partners appear at the top without requiring students to search manually.</p>
         </div>
         <div>
           <h3 style="margin-top:0;">Privacy-aware coordination</h3>
-          <p style="font-size:0.95rem;line-height:1.75;color:var(--fg-dim);">Students are protective of their personal schedules and contact information. The design keeps coordination in-app — no phone numbers, no external calendars required. The group view and calendar screen give students a shared workspace that feels contained and safe.</p>
-          <p style="font-size:0.95rem;line-height:1.75;color:var(--fg-dim);">The result is a product that feels less like a social network and more like a coordination tool: purposeful, low-noise, and structured around the specific context of academic collaboration.</p>
+          <p class="m-note">Students are protective of their personal schedules and contact information. The design keeps coordination fully in-app — no phone numbers, no external calendars required. The group view and shared calendar give students a contained workspace without exposing personal data.</p>
+          <p class="m-note" style="margin-top:12px;">The result is a product that feels less like a social network and more like a coordination tool: purposeful, low-noise, and scoped entirely to academic collaboration.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- App screens -->
+  <!-- 02 Authentication -->
   <section class="case-media-section" style="padding:64px 0;">
     <div class="wrap">
-      <p class="cs-label">02 / App screens</p>
+      <span class="m-lbl">02 / App screens</span>
 
-      <!-- Authentication -->
-      <p style="font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.05em;margin-bottom:24px;">AUTHENTICATION</p>
-      <div style="display:flex;justify-content:center;margin-bottom:64px;">
-        <div style="max-width:240px;width:100%;">
-          <img src="../assets/images/minder-screen-1-login.png" alt="Minder — Login screen" loading="lazy" class="cs-screen">
-          <p class="cs-screen-label">01 / Login</p>
+      <span class="m-sublbl">Authentication</span>
+      <div style="display:flex;justify-content:center;margin-bottom:60px;">
+        <div style="max-width:220px;width:100%;">
+          <img src="../assets/images/minder-screen-1-login.png" alt="Minder — Login" loading="lazy" class="m-phone">
+          <p class="m-screen-cap">01 / Login</p>
         </div>
       </div>
 
-      <!-- Onboarding -->
-      <p style="font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.05em;margin-bottom:24px;">ONBOARDING</p>
-      <div style="display:flex;justify-content:center;margin-bottom:64px;">
-        <div style="max-width:240px;width:100%;">
-          <img src="../assets/images/minder-screen-2-setup.png" alt="Minder — Profile setup screen" loading="lazy" class="cs-screen">
-          <p class="cs-screen-label">02 / Profile setup</p>
+      <span class="m-sublbl">Onboarding</span>
+      <div style="display:flex;justify-content:center;margin-bottom:60px;">
+        <div style="max-width:220px;width:100%;">
+          <img src="../assets/images/minder-screen-2-setup.png" alt="Minder — Profile setup" loading="lazy" class="m-phone">
+          <p class="m-screen-cap">02 / Profile setup</p>
         </div>
       </div>
 
-      <!-- Core experience -->
-      <p style="font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.05em;margin-bottom:24px;">CORE EXPERIENCE</p>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px;max-width:560px;margin:0 auto 64px;">
+      <span class="m-sublbl">Core experience</span>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:500px;margin:0 auto 60px;">
         <div>
-          <img src="../assets/images/minder-screen-3-groups.png" alt="Minder — Find study group screen" loading="lazy" class="cs-screen">
-          <p class="cs-screen-label">03 / Home</p>
+          <img src="../assets/images/minder-screen-3-groups.png" alt="Minder — Find groups" loading="lazy" class="m-phone">
+          <p class="m-screen-cap">03 / Home</p>
         </div>
         <div>
-          <img src="../assets/images/minder-screen-4-profile.png" alt="Minder — User profile screen" loading="lazy" class="cs-screen">
-          <p class="cs-screen-label">04 / Profile</p>
+          <img src="../assets/images/minder-screen-4-profile.png" alt="Minder — Profile" loading="lazy" class="m-phone">
+          <p class="m-screen-cap">04 / Profile</p>
         </div>
       </div>
 
-      <!-- Scheduling -->
-      <p style="font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.05em;margin-bottom:24px;">SCHEDULING</p>
+      <span class="m-sublbl">Scheduling</span>
       <div style="display:flex;justify-content:center;">
-        <div style="max-width:280px;width:100%;">
-          <img src="../assets/images/minder-screen-5-calendar.png" alt="Minder — Calendar screen" loading="lazy" class="cs-screen">
-          <p class="cs-screen-label">05 / Schedule</p>
+        <div style="max-width:260px;width:100%;">
+          <img src="../assets/images/minder-screen-5-calendar.png" alt="Minder — Calendar" loading="lazy" class="m-phone">
+          <p class="m-screen-cap">05 / Schedule</p>
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="cs-divider">
+  <hr class="m-rule">
 
-  <!-- Outcome -->
+  <!-- 03 Outcome -->
   <section class="case-content" style="background:var(--bg-soft);">
     <div class="wrap case-grid">
-      <aside>
-        <h2>Outcome</h2>
-      </aside>
+      <aside><h2>Outcome</h2></aside>
       <div>
         <h3>Core value proposition</h3>
-        <p>Minder helps UW students form study groups around shared classes, schedules, goals, and study preferences. The concept reduces the overhead of organizing group study and gives students a clearer way to find compatible collaborators.</p>
+        <p>Minder helps UW students form study groups around shared classes, schedules, goals, and study preferences — reducing the overhead of organizing group study and giving students a clearer way to find compatible collaborators.</p>
         <h3>Unique selling point</h3>
         <p>Unlike generic messaging apps, Minder is built specifically for academic collaboration. It supports structured discovery, accountability, and privacy-aware coordination so study groups become more consistent and productive.</p>
         <h3>Results</h3>
-        <p>The team developed a cohesive concept, refined user flow, and clear onboarding model. The project was presented to peers and industry professionals, with feedback focused on usability, privacy, and the value of making study coordination more intentional.</p>
+        <p>The team developed a cohesive brand direction, refined user flow, and clear onboarding model. The project was presented to peers and industry professionals, with feedback focused on usability, privacy, and the value of making study coordination more intentional.</p>
       </div>
     </div>
   </section>
