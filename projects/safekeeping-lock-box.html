@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,6 +9,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+<style>
+  .e-lbl {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .e-two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
+  .e-img { width: 100%; border-radius: var(--radius); box-shadow: 0 6px 28px rgba(0,0,0,0.13); display: block; }
+  .e-note { font-size: 0.9rem; line-height: 1.72; color: var(--fg-dim); }
+  .e-rule { border: none; border-top: 1px solid var(--border); margin: 0; }
+  @media(max-width:640px){ .e-two{ grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 
@@ -27,12 +43,13 @@
 </header>
 
 <main class="case-study">
+
   <section class="case-hero">
     <div class="wrap">
       <a class="back-link" href="../engineering.html">&larr; Back to engineering</a>
       <p class="eyebrow">Physical Computing / Jan 27, 2025</p>
       <h1>SafeKeeping Lock Box</h1>
-      <p class="case-lead">A functional smart lockbox prototype that uses infrared remote input, microcontroller logic, servo-based locking, and LED feedback to create a clear access-control interaction.</p>
+      <p class="case-lead">A functional smart lockbox prototype that uses infrared remote input, microcontroller logic, servo-based locking, and LED feedback to create a clear, reliable access-control interaction.</p>
       <div class="case-meta">
         <div><span>Client</span><strong>HCDE 439</strong></div>
         <div><span>Role</span><strong>Designer &amp; Project Manager</strong></div>
@@ -41,27 +58,91 @@
     </div>
   </section>
 
-  <section class="case-media-section">
+  <section class="case-media-section" style="padding-bottom:0;">
     <div class="wrap">
-      <img class="case-image" src="https://framerusercontent.com/images/fmFloLfRmucRQbG85FcqyUNVw1w.png?height=313&width=445" alt="SafeKeeping Lock Box circuit prototype">
+      <img class="case-image reveal" src="../assets/images/engr-lockbox-hero.png" alt="SafeKeeping Lock Box — product overview with IR remote">
     </div>
   </section>
 
+  <hr class="e-rule">
+
+  <!-- Overview -->
   <section class="case-content">
     <div class="wrap case-grid">
-      <aside>
-        <h2>Background</h2>
-      </aside>
+      <aside><h2>Overview</h2></aside>
       <div>
-        <h3>Defining an intuitive system</h3>
-        <p>SafeKeeping was designed as an interactive lockbox that combines physical security with clear user feedback. The goal was to protect personal items while communicating system state through visible red and green LED indicators.</p>
+        <h3>The problem</h3>
+        <p>Standard lockboxes offer no interaction feedback — you don't know if the box is locked until you try the lid. The design goal was to build a prototype that makes lock state unambiguous: an IR remote as the key, dual LEDs as the lock indicator, and a servo providing definitive physical resistance.</p>
+        <h3>Approach</h3>
+        <p>The system was built around an Arduino Uno, an IR receiver, a servo motor, and a two-LED feedback circuit. A custom code sequence entered via the remote toggles the servo between locked and unlocked positions, with green and red LEDs confirming state at a glance.</p>
+        <h3>Deliverables</h3>
+        <p>A fully functional physical prototype with embedded firmware, documented hardware wiring, and a project breakdown published to GitHub Pages.</p>
+      </div>
+    </div>
+  </section>
 
-        <h3>Crafting a reliable interaction</h3>
-        <p>The prototype was refined through iterative testing of infrared input, code validation, locking behavior, and servo movement. The interaction balances technical reliability with usability by giving users immediate confirmation when the box is locked or unlocked.</p>
+  <hr class="e-rule">
 
-        <h3>Work highlight</h3>
-        <p>The final system integrates infrared input, microcontroller logic, and servo actuation into a standalone embedded prototype. It demonstrates strengths in physical computing, system design, and translating technical behavior into a user-centered interaction.</p>
+  <!-- 01 Hardware system -->
+  <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
+    <div class="wrap">
+      <span class="e-lbl">01 / Hardware system</span>
+      <div class="e-two">
+        <img class="e-img reveal" src="../assets/images/engr-lockbox-circuit.png" alt="SafeKeeping Lock Box — Arduino and breadboard interior">
+        <div style="padding-top:4px;">
+          <h3 style="margin-top:0;">Arduino + breadboard + IR receiver</h3>
+          <p class="e-note">The core circuit lives inside the box: an Arduino Uno runs the control logic, an IR receiver decodes remote signals, and the breadboard routes power and signal to both the servo and the LED indicators.</p>
+          <p class="e-note" style="margin-top:12px;">Wiring discipline was critical — power rails, servo control, IR data, and LED lines all needed clean routing to prevent signal interference and ensure the prototype remained reliable through repeated demo cycles.</p>
+          <p class="e-note" style="margin-top:12px;">The Arduino firmware decodes incoming IR signals, validates the unlock sequence, and drives the servo to the correct angle — all with sub-100ms response time from button press to state change.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- 02 Lock states -->
+  <section class="case-media-section" style="padding:64px 0;">
+    <div class="wrap">
+      <span class="e-lbl">02 / Lock states</span>
+      <div class="e-two">
+        <div>
+          <img class="e-img reveal" src="../assets/images/engr-lockbox-locked.png" alt="SafeKeeping Lock Box — locked state, red LED">
+          <p style="text-align:center;margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.04em;">Locked — red LED</p>
+        </div>
+        <div>
+          <img class="e-img reveal" src="../assets/images/engr-lockbox-unlocked.png" alt="SafeKeeping Lock Box — unlocked state, green LED">
+          <p style="text-align:center;margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.04em;">Unlocked — green LED</p>
+        </div>
+      </div>
+      <p class="e-note" style="max-width:680px;margin-top:24px;">Two states, two colors — no ambiguity. The red LED signals the servo is engaged and the lid is physically blocked. The green LED confirms the servo has retracted and the box can be opened. Both states are visible from across the room, satisfying the core usability requirement: <em>users should never have to guess if the box is locked.</em></p>
+    </div>
+  </section>
+
+  <!-- 03 Mechanism detail -->
+  <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
+    <div class="wrap">
+      <span class="e-lbl">03 / Mechanism detail</span>
+      <div class="e-two">
+        <div style="padding-top:4px;">
+          <h3 style="margin-top:0;">Servo mount and LED placement</h3>
+          <p class="e-note">The servo arm is positioned to physically block the lid at its locked angle and clear the latch channel when unlocked. Getting this geometry right took several iteration cycles — the arm travel arc, mounting depth, and latch clearance all had to be tuned together.</p>
+          <p class="e-note" style="margin-top:12px;">The green LED is mounted at the front-face corner so it's visible from any approach angle. Both LEDs are driven by the Arduino's digital output pins with current-limiting resistors calculated for consistent brightness at 5V.</p>
+        </div>
+        <img class="e-img reveal" src="../assets/images/engr-lockbox-closeup.png" alt="SafeKeeping Lock Box — servo mechanism and LED close-up">
+      </div>
+    </div>
+  </section>
+
+  <hr class="e-rule">
+
+  <!-- Reflection -->
+  <section class="case-content">
+    <div class="wrap case-grid">
+      <aside><h2>Reflection</h2></aside>
+      <div>
+        <h3>What worked</h3>
+        <p>The two-state LED feedback model proved immediately intuitive in user testing — no one needed to be told what red or green meant. The IR remote gave the interaction a satisfying "key" metaphor that made the product feel more like a real appliance than a school project.</p>
+        <h3>What I'd change</h3>
+        <p>The servo mounting relies on friction-fit alignment that can drift after repeated use. A cleaner v2 would use a printed bracket to fix the servo position, and add an EEPROM-backed sequence so the code persists across power cycles.</p>
         <p><a class="text-link" href="https://jacstrickland.github.io/hcde439/FinalProject.html" target="_blank" rel="noopener">View the full GitHub project breakdown &rarr;</a></p>
       </div>
     </div>
@@ -69,9 +150,10 @@
 
   <section class="next-work">
     <div class="wrap">
-      <a href="../design.html">Back to all projects &rarr;</a>
+      <a href="../engineering.html">Back to all projects &rarr;</a>
     </div>
   </section>
+
 </main>
 
 <script src="../js/main.js"></script>
