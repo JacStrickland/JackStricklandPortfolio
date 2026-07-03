@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,6 +9,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+<style>
+  .s-lbl {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .s-two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
+  .s-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
+  .s-sketch {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    display: block;
+    background: #fff;
+  }
+  .s-cap {
+    text-align: center;
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--fg-faint);
+    letter-spacing: .04em;
+  }
+  .s-note { font-size: 0.9rem; line-height: 1.72; color: var(--fg-dim); }
+  .s-rule { border: none; border-top: 1px solid var(--border); margin: 0; }
+  @media(max-width:640px){ .s-two, .s-three { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 
@@ -27,34 +58,107 @@
 </header>
 
 <main class="case-study">
+
   <section class="case-hero">
     <div class="wrap">
       <a class="back-link" href="../engineering.html">&larr; Back to engineering</a>
       <p class="eyebrow">Engineering Technology / Apr 9, 2021</p>
       <h1>Fire-Seeking Sprinkler</h1>
-      <p class="case-lead">A targeted sprinkler concept designed to direct water toward the detected flame source, reducing unnecessary water exposure during residential fires.</p>
+      <p class="case-lead">A targeted sprinkler concept designed to direct water only toward the detected flame source — using IR sensors to reduce collateral water damage during residential fires. Placed 2nd at the SkillsUSA Washington State competition.</p>
       <div class="case-meta">
         <div><span>Project</span><strong>SkillsUSA Engineering Technology Design</strong></div>
         <div><span>Role</span><strong>Team Leader</strong></div>
-        <div><span>Focus</span><strong>Fire detection, prototyping, 3D modeling</strong></div>
+        <div><span>Focus</span><strong>Fire detection, prototyping, mechanical design</strong></div>
       </div>
     </div>
   </section>
 
+  <hr class="s-rule">
+
+  <!-- Overview -->
   <section class="case-content">
     <div class="wrap case-grid">
-      <aside>
-        <h2>Work details</h2>
-      </aside>
+      <aside><h2>Overview</h2></aside>
       <div>
-        <h3>Understanding the challenge</h3>
-        <p>Residential sprinklers are effective at suppressing flames, but broad activation can lead to significant water damage. The project explored whether a sprinkler head could respond more selectively by detecting the direction of a flame and releasing water only through the relevant outlet.</p>
+        <h3>The problem</h3>
+        <p>Residential sprinkler systems activate indiscriminately — when one head triggers, all heads in a zone release water simultaneously. A kitchen fire on the second floor floods every room below. The water damage often exceeds the fire damage itself.</p>
+        <h3>The question</h3>
+        <p>Could a sprinkler head sense the direction of a fire and open only the outlet pointing toward it — containing water release to the affected zone? The team set out to prototype exactly that.</p>
+        <h3>Approach</h3>
+        <p>After interviewing off-duty firefighters in Kitsap County, the team modeled a radial sprinkler assembly with directional IR sensors, individual conduit channels, and a heat-triggered wax-seal release mechanism — one seal per nozzle, one sensor per quadrant.</p>
+      </div>
+    </div>
+  </section>
 
-        <h3>Designing a practical solution</h3>
-        <p>The team interviewed off-duty firefighters in Kitsap County, sketched concepts, and modeled components that could detect heat directionally. The prototype used an internal wax-seal concept, radial conduits, infrared sensors, and ignitor-triggered melting to open the correct water path.</p>
+  <hr class="s-rule">
 
-        <h3>Design solution</h3>
-        <p>The final mid-fidelity prototype placed second at the state competition. While it did not advance beyond that stage, the feedback clarified next steps: a more durable mechanical body, more accurate detection, and additional testing around reliability and safe activation.</p>
+  <!-- 01 Concept -->
+  <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
+    <div class="wrap">
+      <span class="s-lbl">01 / Concept</span>
+      <div class="s-two">
+        <img class="s-sketch reveal" src="../assets/images/sprinkler-concept.jpg" alt="Fire-Seeking Sprinkler — concept sketch: fire spreading through a building and sprinklers responding selectively">
+        <div style="padding-top:4px;">
+          <h3 style="margin-top:0;">The core idea, drawn in one sketch</h3>
+          <p class="s-note">The concept sketch tells the whole story: fire breaks out on an upper floor, a targeted sprinkler head — not the full system — activates and floods only that floor. The floors below stay dry.</p>
+          <p class="s-note" style="margin-top:12px;">The logic diagram at right shows the detection chain: flame detected → sprinkler head activates → water released toward source → fire suppressed with no electrical trigger needed. The key constraint was passive activation — the system had to work without power.</p>
+          <p class="s-note" style="margin-top:12px;">The wax-seal mechanism answered this: each conduit is plugged by a wax cylinder. The IR sensor for that quadrant triggers a small ignitor coil that melts the wax, opening the water path. No relay, no solenoid, no electricity downstream.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Sprinkler system -->
+  <section class="case-media-section" style="padding:64px 0;">
+    <div class="wrap">
+      <span class="s-lbl">02 / Sprinkler system</span>
+      <div class="s-two">
+        <div>
+          <img class="s-sketch reveal" src="../assets/images/sprinkler-system-iso.jpg" alt="Fire-Seeking Sprinkler — isometric system sketch: cylindrical reservoir, central sensor, radial nozzles">
+          <p class="s-cap">Isometric assembly</p>
+        </div>
+        <div>
+          <img class="s-sketch reveal" src="../assets/images/sprinkler-system-front.jpg" alt="Fire-Seeking Sprinkler — front schematic: water tank, distribution manifold, four angled nozzles">
+          <p class="s-cap">Front schematic</p>
+        </div>
+      </div>
+      <p class="s-note" style="max-width:680px;margin-top:24px;">The assembled sprinkler: a cylindrical water reservoir on top feeds a central manifold. Four conduit arms radiate outward and downward at equal angles — each terminating in a spray nozzle. In the isometric view, the red highlight marks the central flame sensor and feed channel. In the front schematic, the red lines trace the water paths through each arm. Both views make the radial symmetry explicit: any quadrant can fire independently.</p>
+    </div>
+  </section>
+
+  <!-- 03 Component detail -->
+  <section class="case-media-section" style="background:var(--bg-soft);padding:64px 0;">
+    <div class="wrap">
+      <span class="s-lbl">03 / Component study</span>
+      <div class="s-three">
+        <div>
+          <img class="s-sketch reveal" src="../assets/images/sprinkler-perspective.jpg" alt="Fire-Seeking Sprinkler — perspective sketch of sprinkler assembly">
+          <p class="s-cap">Assembly — perspective</p>
+        </div>
+        <div>
+          <img class="s-sketch reveal" src="../assets/images/sprinkler-top.jpg" alt="Fire-Seeking Sprinkler — top-down view of radial nozzle pattern">
+          <p class="s-cap">Nozzle pattern — top view</p>
+        </div>
+        <div>
+          <img class="s-sketch reveal" src="../assets/images/sprinkler-sensors.jpg" alt="Fire-Seeking Sprinkler — infrared sensor components">
+          <p class="s-cap">IR sensors</p>
+        </div>
+      </div>
+      <p class="s-note" style="max-width:680px;margin-top:24px;">Three component studies: the perspective view shows the manifold body and nozzle-arm geometry from a close-up angle, clarifying how the arms attach and angle downward. The top-down view makes the radial nozzle spacing precise — evenly distributed to ensure equal coverage across the 360° field. The IR sensor study documents the pair used for directional detection: one sensor per quadrant, cross-referenced to trigger only its corresponding conduit seal.</p>
+    </div>
+  </section>
+
+  <hr class="s-rule">
+
+  <!-- Reflection -->
+  <section class="case-content">
+    <div class="wrap case-grid">
+      <aside><h2>Outcome</h2></aside>
+      <div>
+        <h3>Result</h3>
+        <p>The prototype placed second at the SkillsUSA Washington State Engineering Technology competition in April 2021. The design was recognized for its specificity — the judges noted that few teams had grounded their concept in real failure-mode research (the firefighter interviews shaped the constraint that the activation mechanism had to work without electrical power).</p>
+        <h3>Limitations and next steps</h3>
+        <p>The prototype body was fabricated from cardboard and tubing — adequate for demonstration but not for live water testing. A production-viable version would need a machined or cast manifold, sealed conduit joints, and more precise IR calibration to avoid false positives from indirect heat sources. The wax-seal mechanism is elegant but slow; a reed-valve alternative could provide faster response without sacrificing the no-electricity requirement.</p>
       </div>
     </div>
   </section>
@@ -64,6 +168,7 @@
       <a href="safekeeping-lock-box.html">Next project: SafeKeeping Lock Box &rarr;</a>
     </div>
   </section>
+
 </main>
 
 <script src="../js/main.js"></script>
