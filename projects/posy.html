@@ -40,7 +40,10 @@
   .p-swatch-lbl { font-family:var(--mono); font-size:10px; color:var(--fg-dim); }
   .p-rule { border:none; border-top:1px solid var(--border); margin:0; }
   .p-note { font-size:0.9rem; line-height:1.7; color:var(--fg-dim); margin-top:14px; }
-  @media(max-width:640px){ .p-two,.p-three{ grid-template-columns:1fr; } }
+  .p-appstore { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px; }
+  .p-appstore img { width:100%; border-radius:20px; box-shadow:0 14px 40px rgba(30,10,52,0.16); display:block; }
+  @media(max-width:900px){ .p-appstore{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:640px){ .p-two,.p-three{ grid-template-columns:1fr; } .p-appstore{ grid-template-columns:1fr; max-width:340px; margin-left:auto; margin-right:auto; } }
 </style>
 </head>
 <body>
@@ -229,6 +232,27 @@
       <span class="p-lbl">07 / Screen system</span>
       <img class="p-flat reveal" src="../assets/images/posy-brief-screens.png" alt="Posy — A consistent UI system, screen to screen">
       <p class="p-note" style="max-width:680px;margin-top:16px;">Every screen shares the same anatomy: aurora or calm field, serif headline, frosted glass, posy-orb motifs, thin-line nav. Six screens cover the full journey — Welcome, Discover, Messages, Matchmaking, Date Ideas, Empty State.</p>
+    </div>
+  </section>
+
+  <hr class="p-rule">
+
+  <!-- 08 On the App Store -->
+  <section class="case-media-section" style="padding:64px 0;">
+    <div class="wrap">
+      <span class="p-lbl">08 / On the App Store</span>
+      <p class="p-note" style="max-width:680px;margin:0 0 32px;">The shipped product, told the way a first-time user meets it: nine App Store frames walking through the flowertype quiz, compatibility matching, ice-breaker games, Cupid friend-matchmaking, and planning a real date. Each design decision from the sections above shows up here as a live screen.</p>
+      <div class="p-appstore reveal">
+        <img src="../assets/images/posy-appstore-05.jpg" alt="Posy App Store — Take our short quiz to receive personalized user suggestions" loading="lazy">
+        <img src="../assets/images/posy-appstore-01.jpg" alt="Posy App Store — Find out your flowertype" loading="lazy">
+        <img src="../assets/images/posy-appstore-03.jpg" alt="Posy App Store — Like your potential matches" loading="lazy">
+        <img src="../assets/images/posy-appstore-09.jpg" alt="Posy App Store — Learn why we suggested them" loading="lazy">
+        <img src="../assets/images/posy-appstore-04.jpg" alt="Posy App Store — Play games to break the ice" loading="lazy">
+        <img src="../assets/images/posy-appstore-07.jpg" alt="Posy App Store — Chat with your matches and set up dates IRL" loading="lazy">
+        <img src="../assets/images/posy-appstore-02.jpg" alt="Posy App Store — Get personalized date ideas for both of you" loading="lazy">
+        <img src="../assets/images/posy-appstore-06.jpg" alt="Posy App Store — Matchmake your friends" loading="lazy">
+        <img src="../assets/images/posy-appstore-08.jpg" alt="Posy App Store — Refer others with your username to unlock extra potential matches" loading="lazy">
+      </div>
     </div>
   </section>
 
