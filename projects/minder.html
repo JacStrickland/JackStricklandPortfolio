@@ -33,6 +33,7 @@
   .m-screen-cap { text-align:center; margin-top:12px; font-family:var(--mono); font-size:11px; color:var(--fg-faint); letter-spacing:.04em; }
   .m-note { font-size:0.9rem; line-height:1.72; color:var(--fg-dim); }
   .m-rule { border:none; border-top:1px solid var(--border); margin:0; }
+  .m-embed { border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#000; }
   @media(max-width:640px){ .m-two{ grid-template-columns:1fr; } }
 </style>
 </head>
@@ -157,7 +158,22 @@
 
   <hr class="m-rule">
 
-  <!-- 03 Outcome -->
+  <!-- 03 Demo -->
+  <section class="case-media-section" style="padding:64px 0;">
+    <div class="wrap">
+      <span class="m-lbl">03 / Project demo</span>
+      <p class="m-note" style="max-width:680px;margin:0 0 32px;">A walkthrough of the Minder concept, showing the flow the research pointed to: creating an account, building a study profile, matching into a group by course and availability, and scheduling a session in the shared calendar.</p>
+      <div class="m-embed reveal">
+        <div class="embed">
+          <iframe src="https://www.youtube.com/embed/AsTiQvnAHuY?iv_load_policy=3&rel=0&modestbranding=1&playsinline=1" title="Minder — Project demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="m-rule">
+
+  <!-- 04 Outcome -->
   <section class="case-content" style="background:var(--bg-soft);">
     <div class="wrap case-grid">
       <aside><h2>Outcome</h2></aside>
