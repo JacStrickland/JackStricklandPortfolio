@@ -42,7 +42,12 @@
   .p-note { font-size:0.9rem; line-height:1.7; color:var(--fg-dim); margin-top:14px; }
   .p-appstore { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px; }
   .p-appstore img { width:100%; border-radius:20px; box-shadow:0 14px 40px rgba(30,10,52,0.16); display:block; }
+  .p-embed { border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#000; }
+  .p-ad-two { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
+  .p-ad-cap { margin-top:12px; font-family:var(--mono); font-size:11px; color:var(--fg-faint); letter-spacing:.04em; }
+  .p-vert-ad { width:100%; display:block; border-radius:24px; background:#000; box-shadow:0 20px 52px rgba(30,10,52,0.22); }
   @media(max-width:900px){ .p-appstore{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:640px){ .p-ad-two{ grid-template-columns:1fr; } }
   @media(max-width:640px){ .p-two,.p-three{ grid-template-columns:1fr; } .p-appstore{ grid-template-columns:1fr; max-width:340px; margin-left:auto; margin-right:auto; } }
 </style>
 </head>
@@ -169,6 +174,38 @@
         <img src="../assets/images/posy-appstore-02.jpg" alt="Posy App Store — Get personalized date ideas for both of you" loading="lazy">
         <img src="../assets/images/posy-appstore-06.jpg" alt="Posy App Store — Matchmake your friends" loading="lazy">
         <img src="../assets/images/posy-appstore-08.jpg" alt="Posy App Store — Refer others with your username to unlock extra potential matches" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <hr class="p-rule">
+
+  <!-- Product advertising -->
+  <section class="case-media-section" style="padding:64px 0;">
+    <div class="wrap">
+      <span class="p-lbl">Product advertising</span>
+      <p class="p-note" style="max-width:680px;margin:0 0 32px;">Three short-form spots that carry the brand off the screen and into the city. Each one places Posy against a Seattle landmark and lets the location deliver the line &mdash; the same aurora palette and Didone voice as the app, translated into motion for social and pre-roll placement.</p>
+      <div class="p-ad-two reveal">
+        <div>
+          <div class="p-embed">
+            <div class="embed">
+              <iframe src="https://www.youtube.com/embed/QXLh1r9ru2g?iv_load_policy=3&rel=0&modestbranding=1&playsinline=1" title="Posy Pike Ad" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+          <p class="p-ad-cap">Pike Place Market / Landscape spot</p>
+        </div>
+        <div>
+          <div class="p-embed">
+            <div class="embed">
+              <iframe src="https://www.youtube.com/embed/s5rB9AfNZ_g?iv_load_policy=3&rel=0&modestbranding=1&playsinline=1" title="Posy GasWorks Ad" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+          <p class="p-ad-cap">Gas Works Park / Landscape spot</p>
+        </div>
+      </div>
+      <div style="max-width:330px;margin:40px auto 0;" class="reveal">
+        <video class="p-vert-ad" src="../assets/video/SpaceNeedleAd.mp4" poster="../assets/images/posy-spaceneedle-ad-poster.jpg" controls loop playsinline preload="metadata"></video>
+        <p class="p-ad-cap" style="text-align:center;">Space Needle / Vertical spot &mdash; &ldquo;when you&rsquo;ve had enough space&rdquo;</p>
       </div>
     </div>
   </section>

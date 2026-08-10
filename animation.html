@@ -9,6 +9,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+  /* Vertical (social-format) clips sit uncropped on black inside a standard tile */
+  .gallery .tile .portrait-media {
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+  }
+  .gallery .tile .portrait-media video {
+    width: auto;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+  @media(max-width:640px){ .gallery .tile .portrait-media { height: 70vh; } }
+</style>
 </head>
 <body>
 
@@ -46,6 +63,16 @@
       <div class="tile wide reveal">
         <video src="assets/video/Ivy.mp4" autoplay loop muted playsinline preload="auto"></video>
         <div class="cap">Ivy / Blender growth simulation</div>
+      </div>
+      <div class="tile wide reveal">
+        <video src="assets/video/PortageBay.mp4" autoplay loop muted playsinline preload="auto"></video>
+        <div class="cap">Portage Bay / Blender environment render &mdash; houseboat waterfront and bridge with animated water reflections</div>
+      </div>
+      <div class="tile wide reveal">
+        <div class="portrait-media">
+          <video src="assets/video/SpaceNeedleAd.mp4" poster="assets/images/posy-spaceneedle-ad-poster.jpg" controls loop playsinline preload="metadata"></video>
+        </div>
+        <div class="cap">Posy Space Needle Ad / Vertical motion spot &mdash; &ldquo;when you&rsquo;ve had enough space&rdquo;</div>
       </div>
       <div class="tile wide reveal">
         <img src="https://framerusercontent.com/images/1ur9yVwbpVQdjlNCH1VLCh3bzUs.png?width=1920&height=1080" alt="Shape of Circularity — wireframe render still" loading="lazy">
