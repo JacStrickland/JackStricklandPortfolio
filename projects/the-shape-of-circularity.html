@@ -41,6 +41,35 @@
   }
   .soc-embed { border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#000; }
   .soc-two { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
+  /* Co-design documentation — flows any number of photos, 2-up on desktop.
+     Held at 2 columns rather than 3 so the handwritten notes and small
+     program-card labels stay legible. */
+  .soc-sessions {
+    --soc-ar: 3/2;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(420px, 1fr));
+    gap:24px;
+  }
+  /* Frame grabs from the capstone video are 16:9; workshop stills are 3:2 */
+  .soc-sessions.wide { --soc-ar: 16/9; }
+  .soc-sessions figure { margin:0; }
+  .soc-sessions img {
+    width:100%;
+    aspect-ratio:var(--soc-ar);
+    object-fit:cover;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:var(--bg-card);
+    display:block;
+  }
+  .soc-sessions figcaption {
+    margin-top:10px;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--fg-faint);
+    letter-spacing:.04em;
+    line-height:1.6;
+  }
   @media(max-width:820px){ .soc-two{ grid-template-columns:1fr; } }
 </style>
 </head>
