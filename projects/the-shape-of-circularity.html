@@ -21,16 +21,84 @@
   }
   .soc-rule { border:none; border-top:1px solid var(--line); margin:0; }
   .soc-note { font-size:0.9rem; line-height:1.7; color:var(--fg-dim); }
-  /* Portrait 2:3 poster — held to a poster-sized block instead of full bleed */
-  .soc-poster {
-    display:block;
+  /* Context: background prose beside the exploded axonometric */
+  .soc-context { display:grid; grid-template-columns:1.15fr 1fr; gap:52px; align-items:start; }
+  .soc-context h3 {
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(1.35rem, 2.4vw, 1.8rem);
+    letter-spacing:-0.015em;
+    line-height:1.15;
+    margin:0 0 12px;
+  }
+  .soc-context h3 + p { margin-bottom:30px; }
+  .soc-context p { color:var(--fg-dim); }
+  .soc-axon-wrap { position:sticky; top:96px; }
+  .soc-axon {
     width:100%;
-    max-width:420px;
-    margin:0 auto;
+    display:block;
     border:1px solid var(--line);
     border-radius:var(--radius);
-    background:#f7f5ef;
+    background:#000;
   }
+  /* Eight program zones — colours taken from the plan-set cards */
+  .soc-zones { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .soc-zone {
+    border:1px solid var(--line);
+    border-top:3px solid var(--z, var(--accent));
+    border-radius:var(--radius);
+    background:var(--bg-card);
+    padding:18px 18px 20px;
+  }
+  .soc-zone h4 {
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--fg);
+    margin:0 0 10px;
+  }
+  .soc-zone p { font-size:0.83rem; line-height:1.65; color:var(--fg-dim); margin:0; }
+  /* Four process milestones */
+  .soc-miles { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .soc-mile {
+    border:1px solid var(--line);
+    border-top:3px solid var(--m, var(--accent));
+    border-radius:var(--radius);
+    background:var(--bg-card);
+    padding:22px;
+  }
+  .soc-mile-hd { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .soc-num {
+    flex:0 0 auto;
+    width:24px; height:24px;
+    border-radius:50%;
+    background:var(--m, var(--accent));
+    color:#0a0a0a;
+    font-family:var(--mono);
+    font-size:12px;
+    font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .soc-mile h4 { font-family:var(--sans, inherit); font-size:0.95rem; font-weight:600; color:var(--fg); margin:0; line-height:1.25; }
+  .soc-mile p { font-size:0.83rem; line-height:1.65; color:var(--fg-dim); margin:0; }
+  .soc-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
+  .soc-tag {
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.03em;
+    padding:4px 8px;
+    border-radius:5px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid var(--line);
+    color:var(--fg-dim);
+  }
+  @media(max-width:1000px){ .soc-zones, .soc-miles { grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:900px){
+    .soc-context { grid-template-columns:1fr; gap:36px; }
+    .soc-axon-wrap { position:relative; top:0; }
+  }
+  @media(max-width:560px){ .soc-zones, .soc-miles { grid-template-columns:1fr; } }
   .soc-cap {
     margin-top:12px;
     font-family:var(--mono);
@@ -47,7 +115,9 @@
   .soc-sessions {
     --soc-ar: 3/2;
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(420px, 1fr));
+    /* min() guard: a bare minmax(420px,…) floor keeps the 420px track on
+       narrow phones and pushes the page into horizontal scroll */
+    grid-template-columns:repeat(auto-fit, minmax(min(420px, 100%), 1fr));
     gap:24px;
   }
   /* Frame grabs from the capstone video are 16:9; workshop stills are 3:2 */
@@ -93,7 +163,7 @@
   <section class="case-hero">
     <div class="wrap">
       <a class="back-link" href="../design.html">&larr; Back to design</a>
-      <p class="eyebrow">Capstone / HCDE BS 2026</p>
+      <p class="eyebrow">Capstone Team 19 / HCDE BS 2026</p>
       <h1>The Shape of Circularity</h1>
       <p class="case-lead">Designing a ReUse Commons for Seattle REconomy: a spatial design, research, and 3D visualization project that translates a 9,000+ RSF expansion into a shared resource hub for reuse, repair, education, and material redistribution.</p>
 
@@ -106,54 +176,112 @@
   </section>
 
   <!-- Context / background -->
-  <section class="case-content" style="padding-top:56px;">
-    <div class="wrap case-grid">
-      <aside>
-        <h2>Context</h2>
-      </aside>
-      <div>
-        <h3>Background</h3>
-        <p>Seattle REconomy is a nonprofit focused on promoting a circular economy through reuse, repair, and sharing. With a city grant securing more than 9,000 square feet of new space, our goal was to design an optimal layout for a ReUse Commons: a multi-sector community resource hub beyond a tool library.</p>
+  <section class="case-media-section" style="padding:56px 0;">
+    <div class="wrap">
+      <span class="soc-lbl">Context</span>
+      <div class="soc-context">
+        <div>
+          <h3>Background</h3>
+          <p>Seattle REconomy is a nonprofit focused on promoting a circular economy through reuse, repair, and sharing. With a city grant securing more than 9,000 square feet of new space, our goal was to design an optimal layout for a ReUse Commons: a multi-sector community resource hub beyond a tool library.</p>
 
-        <h3>Design question</h3>
-        <p>How might we design a shared, community-scale space that enables Seattle REconomy's programs, partners, and community members to collaborate effectively while supporting reuse, repair, and material redistribution?</p>
+          <h3>Design question</h3>
+          <p>How might we design a shared, community-scale space that enables Seattle REconomy's programs, partners, and community members to collaborate effectively while supporting reuse, repair, and material redistribution?</p>
 
-        <h3>Pain points</h3>
-        <p>Staff and volunteers were stretched by high demand, donations, and clutter. As outside stakeholders, our team helped prioritize goals, navigate dependencies, and envision the Shoreline space as a true ReUse Commons that could support each sector's needs.</p>
+          <h3>Pain points</h3>
+          <p>Seattle REconomy staff and volunteers are stretched by high demand, donations, and clutter. As outside stakeholders, we were uniquely positioned to help prioritize goals, navigate dependencies, and envision the Shoreline space as a true ReUse Commons that meets the needs of each sector.</p>
+        </div>
+        <div class="soc-axon-wrap reveal">
+          <img class="soc-axon" src="../assets/images/shape-of-circularity-axon.png" alt="Exploded axonometric of the ReUse Commons showing three stacked design layers" loading="lazy">
+          <p class="soc-cap">Three designs, each building on the last / Exploded axonometric in Blender &mdash; furnished zones across the warehouse and main building, 9,000+ RSF over two buildings</p>
+        </div>
       </div>
     </div>
   </section>
 
   <hr class="soc-rule">
 
-  <!-- Poster -->
+  <!-- Eight program zones -->
   <section class="case-media-section" style="padding:56px 0;">
     <div class="wrap">
-      <span class="soc-lbl">Capstone poster</span>
-      <img class="soc-poster reveal" src="../assets/images/shape-of-circularity-poster.png" alt="The Shape of Circularity capstone poster" loading="lazy">
-      <p class="soc-cap" style="text-align:center;">The Shape of Circularity / Capstone summary poster</p>
+      <span class="soc-lbl">The eight program zones</span>
+      <p class="soc-note" style="max-width:680px;margin:0 0 32px;">The Commons had to hold eight distinct programs across two buildings without them competing for the same floor, door, or volunteer. Defining each zone's role &mdash; and what it needed from its neighbours &mdash; drove every layout decision that followed.</p>
+      <div class="soc-zones reveal">
+        <div class="soc-zone" style="--z:#E3A9AD;">
+          <h4>Reuse Store</h4>
+          <p>Retail floor for donated goods, with front desk, point of sale, and deep storage behind.</p>
+        </div>
+        <div class="soc-zone" style="--z:#E5DCA0;">
+          <h4>Tool Library</h4>
+          <p>The lending collection and member checkout &mdash; the existing program the Commons grows out from.</p>
+        </div>
+        <div class="soc-zone" style="--z:#BFC6DE;">
+          <h4>Donation Intake</h4>
+          <p>Receiving and sorting, sited for van loading and a fleet of trolleys serving the whole space.</p>
+        </div>
+        <div class="soc-zone" style="--z:#EBD3B0;">
+          <h4>Fixer Room</h4>
+          <p>Repair benches running intake's own workflow: to be fixed, fixed, returned to the library.</p>
+        </div>
+        <div class="soc-zone" style="--z:#BFD6B8;">
+          <h4>Education Space</h4>
+          <p>A resettable room scaling from small hands-on classes up to lecture-format sessions.</p>
+        </div>
+        <div class="soc-zone" style="--z:#E3DEB4;">
+          <h4>Woodshop</h4>
+          <p>Large tools with dust collection and its own loading access, kept clear of public flow.</p>
+        </div>
+        <div class="soc-zone" style="--z:#EFC0BA;">
+          <h4>Bike Shack</h4>
+          <p>Repair stands, a wash bay, and zoned work areas in the warehouse building.</p>
+        </div>
+        <div class="soc-zone" style="--z:#A8CFC9;">
+          <h4>Makerspace</h4>
+          <p>Shared equipment with classroom and orientation space for new members.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <hr class="soc-rule">
 
-  <!-- Process -->
-  <section class="case-content">
-    <div class="wrap case-grid">
-      <aside>
-        <h2>Process</h2>
-      </aside>
-      <div>
-        <h3>How we worked</h3>
-        <ul class="case-list">
-          <li>Research synthesis through literature review, field observation, and six stakeholder interviews.</li>
-          <li>Low-fidelity layout work using journey mapping and two co-design workshops.</li>
-          <li>Physical usability testing with a 3D printed blueprint and two interactive testing sessions.</li>
-          <li>Digital rendering in Blender to communicate the full spatial proposal to partners, funders, and community stakeholders.</li>
-        </ul>
-
-        <h3>Spatial design</h3>
-        <p>The proposal organizes three designs, each building on the last, across the main building and warehouse. Program zones include the Reuse Store, Tool Library, Donation Intake, Fixer Room, Education Space, Woodshop, Bike Shack, and Makerspace.</p>
+  <!-- Process: four milestones -->
+  <section class="case-media-section" style="padding:56px 0;">
+    <div class="wrap">
+      <span class="soc-lbl">Process &mdash; four milestones</span>
+      <p class="soc-note" style="max-width:680px;margin:0 0 32px;">Each milestone fed the next: research set the requirements, stakeholders shaped them into zones, physical testing challenged those zones, and rendering turned the result into something the nonprofit could hand to a funder.</p>
+      <div class="soc-miles reveal">
+        <div class="soc-mile" style="--m:#D64550;">
+          <div class="soc-mile-hd"><span class="soc-num">1</span><h4>Research Synthesis</h4></div>
+          <p>Develop design requirements based on stakeholder needs, workflows, challenges, and goals.</p>
+          <div class="soc-tags">
+            <span class="soc-tag">Literature review</span>
+            <span class="soc-tag">Field obs. &middot; 8+ hrs</span>
+            <span class="soc-tag">Interviews &middot; 6</span>
+          </div>
+        </div>
+        <div class="soc-mile" style="--m:#E0952A;">
+          <div class="soc-mile-hd"><span class="soc-num">2</span><h4>Low-Fidelity Layout</h4></div>
+          <p>Actively involve stakeholders in shaping solutions, translating requirements into spatial zones.</p>
+          <div class="soc-tags">
+            <span class="soc-tag">User journey mapping</span>
+            <span class="soc-tag">Co-design workshops &middot; 2</span>
+          </div>
+        </div>
+        <div class="soc-mile" style="--m:#E3C03A;">
+          <div class="soc-mile-hd"><span class="soc-num">3</span><h4>Physical Usability Testing</h4></div>
+          <p>Validate assumptions and gain real-time feedback on layout decisions through interactive testing.</p>
+          <div class="soc-tags">
+            <span class="soc-tag">3D printed blueprint</span>
+            <span class="soc-tag">Usability testing &middot; 2 sessions</span>
+          </div>
+        </div>
+        <div class="soc-mile" style="--m:#4E8C4A;">
+          <div class="soc-mile-hd"><span class="soc-num">4</span><h4>Digital Rendering</h4></div>
+          <p>Visualize the Commons in a digital 3D model, a useful artifact for grant access and future design.</p>
+          <div class="soc-tags">
+            <span class="soc-tag">Blender rendering</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -216,6 +344,22 @@
 
   <hr class="soc-rule">
 
+  <!-- Design philosophy -->
+  <section class="case-content">
+    <div class="wrap case-grid">
+      <aside>
+        <h2>Design philosophy</h2>
+      </aside>
+      <div>
+        <h3>The sponsor and community were the experts</h3>
+        <p>As outside stakeholders, we recognized early that we were not the ones who knew this work &mdash; the staff, volunteers, and members did. So we designed an interactive research process rather than a consultative one: frequently testing assumptions with stakeholders, staying closely aligned with our sponsor, and spending time in the Shoreline Tool Library to understand the ecosystem firsthand.</p>
+        <p>That choice is why the co-design workshops and the 3D printed testing sessions exist at all. Handing people something they could move, annotate, and argue with produced sharper direction than any layout we could have proposed on our own.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="soc-rule">
+
   <!-- Deliverables -->
   <section class="case-content">
     <div class="wrap case-grid">
@@ -248,6 +392,22 @@
           </div>
           <p class="soc-cap">Final Presentation / Capstone deliverable for Seattle REconomy</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="soc-rule">
+
+  <!-- Next steps -->
+  <section class="case-content">
+    <div class="wrap case-grid">
+      <aside>
+        <h2>Next steps</h2>
+      </aside>
+      <div>
+        <h3>Where it goes from here</h3>
+        <p>Seattle REconomy expects to gain access to the new space within months. Our research and layout models will guide the physical buildout and serve as a shared vision for communicating plans with partners, funders, and community stakeholders.</p>
+        <p>Because the three designs build on one another, the nonprofit can open with the first and grow into the others as funding and volunteer capacity allow &mdash; rather than needing the whole Commons in place on day one.</p>
       </div>
     </div>
   </section>
