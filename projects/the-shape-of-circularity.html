@@ -9,6 +9,40 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+<style>
+  .soc-lbl {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .soc-rule { border:none; border-top:1px solid var(--line); margin:0; }
+  .soc-note { font-size:0.9rem; line-height:1.7; color:var(--fg-dim); }
+  /* Portrait 2:3 poster — held to a poster-sized block instead of full bleed */
+  .soc-poster {
+    display:block;
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:#f7f5ef;
+  }
+  .soc-cap {
+    margin-top:12px;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--fg-faint);
+    letter-spacing:.04em;
+    line-height:1.6;
+  }
+  .soc-embed { border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#000; }
+  .soc-two { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
+  @media(max-width:820px){ .soc-two{ grid-template-columns:1fr; } }
+</style>
 </head>
 <body>
 
@@ -42,22 +76,11 @@
     </div>
   </section>
 
-  <section class="case-media-section">
-    <div class="wrap">
-      <img class="case-image poster reveal" src="../assets/images/shape-of-circularity-poster.png" alt="The Shape of Circularity capstone poster" loading="eager">
-    </div>
-  </section>
-
-  <section class="case-media-section">
-    <div class="wrap">
-      <video class="case-video reveal" src="../assets/video/shape-of-circularity-capstone.mp4" poster="../assets/images/shape-of-circularity-poster.png" controls muted playsinline preload="metadata"></video>
-    </div>
-  </section>
-
-  <section class="case-content">
+  <!-- Context / background -->
+  <section class="case-content" style="padding-top:56px;">
     <div class="wrap case-grid">
       <aside>
-        <h2>Project overview</h2>
+        <h2>Context</h2>
       </aside>
       <div>
         <h3>Background</h3>
@@ -68,8 +91,31 @@
 
         <h3>Pain points</h3>
         <p>Staff and volunteers were stretched by high demand, donations, and clutter. As outside stakeholders, our team helped prioritize goals, navigate dependencies, and envision the Shoreline space as a true ReUse Commons that could support each sector's needs.</p>
+      </div>
+    </div>
+  </section>
 
-        <h3>Process</h3>
+  <hr class="soc-rule">
+
+  <!-- Poster -->
+  <section class="case-media-section" style="padding:56px 0;">
+    <div class="wrap">
+      <span class="soc-lbl">Capstone poster</span>
+      <img class="soc-poster reveal" src="../assets/images/shape-of-circularity-poster.png" alt="The Shape of Circularity capstone poster" loading="lazy">
+      <p class="soc-cap" style="text-align:center;">The Shape of Circularity / Capstone summary poster</p>
+    </div>
+  </section>
+
+  <hr class="soc-rule">
+
+  <!-- Process -->
+  <section class="case-content">
+    <div class="wrap case-grid">
+      <aside>
+        <h2>Process</h2>
+      </aside>
+      <div>
+        <h3>How we worked</h3>
         <ul class="case-list">
           <li>Research synthesis through literature review, field observation, and six stakeholder interviews.</li>
           <li>Low-fidelity layout work using journey mapping and two co-design workshops.</li>
@@ -79,9 +125,44 @@
 
         <h3>Spatial design</h3>
         <p>The proposal organizes three designs, each building on the last, across the main building and warehouse. Program zones include the Reuse Store, Tool Library, Donation Intake, Fixer Room, Education Space, Woodshop, Bike Shack, and Makerspace.</p>
+      </div>
+    </div>
+  </section>
 
+  <hr class="soc-rule">
+
+  <!-- Deliverables -->
+  <section class="case-content">
+    <div class="wrap case-grid">
+      <aside>
+        <h2>Deliverables</h2>
+      </aside>
+      <div>
         <h3>Outcome</h3>
         <p>The final deliverables combine research, floor-plan strategy, physical testing, and cinematic 3D rendering. The resulting models give Seattle REconomy a clear artifact for grant access, partner communication, and future buildout planning as they move toward the new space.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-media-section" style="padding:8px 0 64px;">
+    <div class="wrap">
+      <div class="soc-two reveal">
+        <div>
+          <div class="soc-embed">
+            <div class="embed">
+              <iframe src="https://www.youtube.com/embed/bypQ4z7IATs?iv_load_policy=3&rel=0&modestbranding=1&playsinline=1" title="The Shape of Circularity — Final Cinematic" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+          <p class="soc-cap">Final Cinematic / Blender spatial visualization of the proposed ReUse Commons</p>
+        </div>
+        <div>
+          <div class="soc-embed">
+            <div class="embed">
+              <iframe src="https://www.youtube.com/embed/F9c3iEEKK_U?iv_load_policy=3&rel=0&modestbranding=1&playsinline=1" title="The Shape of Circularity — Final Presentation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+          <p class="soc-cap">Final Presentation / Capstone deliverable for Seattle REconomy</p>
+        </div>
       </div>
     </div>
   </section>
