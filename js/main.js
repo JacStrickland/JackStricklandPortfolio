@@ -29,3 +29,26 @@ if ('IntersectionObserver' in window && els.length) {
 } else {
   els.forEach(el => el.classList.add('in'));
 }
+
+// Autoplay clips only while on screen, so a gallery page doesn't
+// download every video up front. Videos use preload="none" and
+// start loading the first time they scroll near the viewport.
+const clips = document.querySelectorAll('video[data-autoplay]');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const tryPlay = v => { const p = v.play(); if (p) p.catch(() => {}); };
+if ('IntersectionObserver' in window && clips.length) {
+  const vo = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) {
+        if (reduceMotion) { v.preload = 'metadata'; v.controls = true; }
+        else tryPlay(v);
+      } else if (!v.paused) {
+        v.pause();
+      }
+    });
+  }, { rootMargin: '200px 0px' });
+  clips.forEach(v => vo.observe(v));
+} else {
+  clips.forEach(tryPlay);
+}

@@ -9,47 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
-<style>
-  .p-lbl {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--fg-faint);
-    margin-bottom: 20px;
-    display: block;
-  }
-  .p-sublbl {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    color: var(--fg-faint);
-    margin-bottom: 12px;
-    display: block;
-  }
-  .p-two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
-  .p-three { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; align-items: start; }
-  .p-img { width: 100%; border-radius: var(--radius); box-shadow: 0 6px 28px rgba(0,0,0,0.11); display: block; }
-  .p-flat { width: 100%; border-radius: var(--radius); display: block; }
-  .p-phone { width: 100%; border-radius: 24px; box-shadow: 0 20px 52px rgba(0,0,0,0.22); display: block; }
-  .p-screen-cap { text-align:center; margin-top:12px; font-family:var(--mono); font-size:11px; color:var(--fg-faint); letter-spacing:.04em; }
-  .p-swatch-row { display:flex; gap:14px; flex-wrap:wrap; margin:20px 0 24px; }
-  .p-swatch { display:flex; flex-direction:column; gap:6px; }
-  .p-swatch-block { width:68px; height:44px; border-radius:8px; border:1px solid rgba(0,0,0,0.07); }
-  .p-swatch-lbl { font-family:var(--mono); font-size:10px; color:var(--fg-dim); }
-  .p-rule { border:none; border-top:1px solid var(--border); margin:0; }
-  .p-note { font-size:0.9rem; line-height:1.7; color:var(--fg-dim); margin-top:14px; }
-  .p-appstore { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px; }
-  .p-appstore img { width:100%; border-radius:20px; box-shadow:0 14px 40px rgba(30,10,52,0.16); display:block; }
-  .p-embed { border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#000; }
-  .p-ad-two { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
-  .p-ad-cap { margin-top:12px; font-family:var(--mono); font-size:11px; color:var(--fg-faint); letter-spacing:.04em; }
-  .p-vert-ad { width:100%; display:block; border-radius:24px; background:#000; box-shadow:0 20px 52px rgba(30,10,52,0.22); }
-  @media(max-width:900px){ .p-appstore{ grid-template-columns:repeat(2,1fr); } }
-  @media(max-width:640px){ .p-ad-two{ grid-template-columns:1fr; } }
-  @media(max-width:640px){ .p-two,.p-three{ grid-template-columns:1fr; } .p-appstore{ grid-template-columns:1fr; max-width:340px; margin-left:auto; margin-right:auto; } }
-</style>
 </head>
 <body>
 
@@ -242,6 +201,34 @@
   </section>
 
 </main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand-lg">Jack Strickland</div>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="../about.html">About</a>
+        <a href="../design.html">Dsgn</a>
+        <a href="../engineering.html">Engr</a>
+        <a href="../animation.html">Anim</a>
+        <a href="../film.html">Film</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:13605350232">360-535-0232</a>
+        <a href="mailto:jacstrickland@outlook.com">jacstrickland@outlook.com</a>
+        <span>Brooklyn, NY, USA</span>
+        <a href="https://www.linkedin.com/in/jack-r-strickland-uwhcde" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>&copy; 2026 Jack Strickland</span>
+    </div>
+  </div>
+</footer>
 
 <script src="../js/main.js"></script>
 </body>

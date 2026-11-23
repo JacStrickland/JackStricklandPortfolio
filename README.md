@@ -68,7 +68,9 @@ Then visit `http://localhost:8000`.
 ## Notes
 
 - Copy lives directly in the HTML files.
-- Global layout, typography, colors, and case-study styles live in `css/style.css`.
+- Global layout, typography, colors, and case-study styles live in `css/style.css` (no per-page `<style>` blocks).
+- Project list thumbnails are small 640x400 JPEGs in `assets/images/thumbs/`.
+- Gallery videos use `data-autoplay` + `preload="none"`; `js/main.js` plays them only while on screen.
 - Most older media uses Framer-hosted image URLs and YouTube embeds.
 - The Shape of Circularity uses local optimized assets in `assets/images/` and `assets/video/`.
 - The private Framer editor URL requires login, so this repository uses the publicly visible Framer pages as source content.
