@@ -9,22 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
-<style>
-  .e-lbl {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--fg-faint);
-    margin-bottom: 20px;
-    display: block;
-  }
-  .e-two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
-  .e-img { width: 100%; border-radius: var(--radius); box-shadow: 0 6px 28px rgba(0,0,0,0.13); display: block; }
-  .e-note { font-size: 0.9rem; line-height: 1.72; color: var(--fg-dim); }
-  .e-rule { border: none; border-top: 1px solid var(--border); margin: 0; }
-  @media(max-width:640px){ .e-two{ grid-template-columns: 1fr; } }
-</style>
 </head>
 <body>
 
@@ -60,7 +44,7 @@
 
   <section class="case-media-section" style="padding-bottom:0;">
     <div class="wrap">
-      <img class="case-image reveal" src="../assets/images/engr-lockbox-hero.png" alt="SafeKeeping Lock Box — product overview with IR remote">
+      <img class="case-image reveal" src="../assets/images/engr-lockbox-hero.jpg" alt="SafeKeeping Lock Box — product overview with IR remote">
     </div>
   </section>
 
@@ -106,11 +90,11 @@
       <div class="e-two">
         <div>
           <img class="e-img reveal" src="../assets/images/engr-lockbox-locked.png" alt="SafeKeeping Lock Box — locked state, red LED">
-          <p style="text-align:center;margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.04em;">Locked — red LED</p>
+          <p style="text-align:center;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--fg-faint);letter-spacing:.04em;">Locked — red LED</p>
         </div>
         <div>
           <img class="e-img reveal" src="../assets/images/engr-lockbox-unlocked.png" alt="SafeKeeping Lock Box — unlocked state, green LED">
-          <p style="text-align:center;margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--fg-faint);letter-spacing:.04em;">Unlocked — green LED</p>
+          <p style="text-align:center;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--fg-faint);letter-spacing:.04em;">Unlocked — green LED</p>
         </div>
       </div>
       <p class="e-note" style="max-width:680px;margin-top:24px;">Two states, two colors — no ambiguity. The red LED signals the servo is engaged and the lid is physically blocked. The green LED confirms the servo has retracted and the box can be opened. Both states are visible from across the room, satisfying the core usability requirement: <em>users should never have to guess if the box is locked.</em></p>
@@ -127,7 +111,7 @@
           <p class="e-note">The servo arm is positioned to physically block the lid at its locked angle and clear the latch channel when unlocked. Getting this geometry right took several iteration cycles — the arm travel arc, mounting depth, and latch clearance all had to be tuned together.</p>
           <p class="e-note" style="margin-top:12px;">The green LED is mounted at the front-face corner so it's visible from any approach angle. Both LEDs are driven by the Arduino's digital output pins with current-limiting resistors calculated for consistent brightness at 5V.</p>
         </div>
-        <img class="e-img reveal" src="../assets/images/engr-lockbox-closeup.png" alt="SafeKeeping Lock Box — servo mechanism and LED close-up">
+        <img class="e-img reveal" src="../assets/images/engr-lockbox-closeup.jpg" alt="SafeKeeping Lock Box — servo mechanism and LED close-up">
       </div>
     </div>
   </section>
@@ -155,6 +139,34 @@
   </section>
 
 </main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand-lg">Jack Strickland</div>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="../about.html">About</a>
+        <a href="../design.html">Dsgn</a>
+        <a href="../engineering.html">Engr</a>
+        <a href="../animation.html">Anim</a>
+        <a href="../film.html">Film</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:13605350232">360-535-0232</a>
+        <a href="mailto:jacstrickland@outlook.com">jacstrickland@outlook.com</a>
+        <span>Brooklyn, NY, USA</span>
+        <a href="https://www.linkedin.com/in/jack-r-strickland-uwhcde" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>&copy; 2026 Jack Strickland</span>
+    </div>
+  </div>
+</footer>
 
 <script src="../js/main.js"></script>
 </body>
